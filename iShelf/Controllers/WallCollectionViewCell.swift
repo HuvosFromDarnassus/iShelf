@@ -8,5 +8,6 @@
 import UIKit
 
 class WallCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var _wallImageView: UIImageView!
     
 }

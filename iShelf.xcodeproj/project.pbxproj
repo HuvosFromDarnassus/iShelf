@@ -14,6 +14,10 @@
 		650F95C6280EA6D60012F3FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 650F95C4280EA6D60012F3FF /* LaunchScreen.storyboard */; };
 		650F95CF280EA7920012F3FF /* WallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95CE280EA7920012F3FF /* WallCollectionViewCell.swift */; };
 		650F95D2280EA7CF0012F3FF /* WallsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95D1280EA7CF0012F3FF /* WallsCollectionViewController.swift */; };
+		650F95D4280EA89C0012F3FF /* Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95D3280EA89C0012F3FF /* Wall.swift */; };
+		650F95D7280EA8E20012F3FF /* IScalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95D6280EA8E20012F3FF /* IScalable.swift */; };
+		650F95D9280EA91F0012F3FF /* WallBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95D8280EA91F0012F3FF /* WallBrain.swift */; };
+		650F95DB280EA9400012F3FF /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95DA280EA9400012F3FF /* DeviceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		650F95C7280EA6D60012F3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		650F95CE280EA7920012F3FF /* WallCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallCollectionViewCell.swift; sourceTree = "<group>"; };
 		650F95D1280EA7CF0012F3FF /* WallsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallsCollectionViewController.swift; sourceTree = "<group>"; };
+		650F95D3280EA89C0012F3FF /* Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wall.swift; sourceTree = "<group>"; };
+		650F95D6280EA8E20012F3FF /* IScalable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IScalable.swift; sourceTree = "<group>"; };
+		650F95D8280EA91F0012F3FF /* WallBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallBrain.swift; sourceTree = "<group>"; };
+		650F95DA280EA9400012F3FF /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +68,14 @@
 			children = (
 				650F95B9280EA6D50012F3FF /* AppDelegate.swift */,
 				650F95BB280EA6D50012F3FF /* SceneDelegate.swift */,
+				650F95D6280EA8E20012F3FF /* IScalable.swift */,
+				650F95D5280EA8C80012F3FF /* Model */,
 				650F95CD280EA7760012F3FF /* View */,
 				650F95D0280EA7980012F3FF /* Controllers */,
 				650F95C4280EA6D60012F3FF /* LaunchScreen.storyboard */,
 				650F95C2280EA6D60012F3FF /* Assets.xcassets */,
 				650F95C7280EA6D60012F3FF /* Info.plist */,
+				650F95DA280EA9400012F3FF /* DeviceManager.swift */,
 			);
 			path = iShelf;
 			sourceTree = "<group>";
@@ -73,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				650F95BF280EA6D50012F3FF /* Main.storyboard */,
-				650F95D1280EA7CF0012F3FF /* WallsCollectionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -81,9 +91,19 @@
 		650F95D0280EA7980012F3FF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				650F95D1280EA7CF0012F3FF /* WallsCollectionViewController.swift */,
 				650F95CE280EA7920012F3FF /* WallCollectionViewCell.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		650F95D5280EA8C80012F3FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				650F95D8280EA91F0012F3FF /* WallBrain.swift */,
+				650F95D3280EA89C0012F3FF /* Wall.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +178,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				650F95D2280EA7CF0012F3FF /* WallsCollectionViewController.swift in Sources */,
+				650F95DB280EA9400012F3FF /* DeviceManager.swift in Sources */,
 				650F95CF280EA7920012F3FF /* WallCollectionViewCell.swift in Sources */,
+				650F95D9280EA91F0012F3FF /* WallBrain.swift in Sources */,
+				650F95D4280EA89C0012F3FF /* Wall.swift in Sources */,
 				650F95BA280EA6D50012F3FF /* AppDelegate.swift in Sources */,
+				650F95D7280EA8E20012F3FF /* IScalable.swift in Sources */,
 				650F95BC280EA6D50012F3FF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

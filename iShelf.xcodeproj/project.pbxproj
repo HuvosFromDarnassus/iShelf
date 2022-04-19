@@ -116,10 +116,10 @@
 			children = (
 				650F95D8280EA91F0012F3FF /* WallBrain.swift */,
 				650F95E0280EB0070012F3FF /* ShelfBrain.swift */,
+				650F95E6280EB7EC0012F3FF /* PreviewBrain.swift */,
 				650F95D3280EA89C0012F3FF /* Wall.swift */,
 				650F95DE280EAFEC0012F3FF /* Shelf.swift */,
 				650F95E4280EB7D60012F3FF /* Preview.swift */,
-				650F95E6280EB7EC0012F3FF /* PreviewBrain.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

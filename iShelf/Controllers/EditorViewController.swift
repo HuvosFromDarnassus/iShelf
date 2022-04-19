@@ -12,6 +12,8 @@ class EditorViewController: UIViewController {
     @IBOutlet private weak var _shelvesImageView: UIImageView!
     @IBOutlet private weak var _previewImageView: UIImageView!
     
+    private let _segueId = "goToInfoVC"
+    
     private var _wall: Wall?
     private var _wallImage: UIImage?
     
@@ -41,7 +43,10 @@ class EditorViewController: UIViewController {
     @IBAction private func backgroundsButtonPressed(_ sender: UIButton) {
         dismiss(animated: true)
     }
-    @IBAction func previewButtonPressed(_ sender: UIButton) {
+    @IBAction private func infoButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: _segueId, sender: self)
+    }
+    @IBAction private func previewButtonPressed(_ sender: UIButton) {
         _previewImageView.isHidden = _previewImageView.isHidden == false ? true : false
 
         let preview = previewBrain.getPreview(by: 0)

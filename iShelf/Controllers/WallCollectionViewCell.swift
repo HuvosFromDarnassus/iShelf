@@ -8,6 +8,14 @@
 import UIKit
 
 class WallCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var _wallImageView: UIImageView!
+    @IBOutlet private weak var _wallImageView: UIImageView!
     
+    public func setImage(_ image: UIImage?) {
+        guard let unwrappedImage = image else {
+            _wallImageView.image = UIImage(named: WallsCollectionViewController.wallDefaultImageName)
+            return
+        }
+        
+        _wallImageView.image = unwrappedImage
+    }
 }

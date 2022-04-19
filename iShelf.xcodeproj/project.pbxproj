@@ -68,6 +68,7 @@
 			children = (
 				650F95B9280EA6D50012F3FF /* AppDelegate.swift */,
 				650F95BB280EA6D50012F3FF /* SceneDelegate.swift */,
+				650F95DA280EA9400012F3FF /* DeviceManager.swift */,
 				650F95D6280EA8E20012F3FF /* IScalable.swift */,
 				650F95D5280EA8C80012F3FF /* Model */,
 				650F95CD280EA7760012F3FF /* View */,
@@ -75,7 +76,6 @@
 				650F95C4280EA6D60012F3FF /* LaunchScreen.storyboard */,
 				650F95C2280EA6D60012F3FF /* Assets.xcassets */,
 				650F95C7280EA6D60012F3FF /* Info.plist */,
-				650F95DA280EA9400012F3FF /* DeviceManager.swift */,
 			);
 			path = iShelf;
 			sourceTree = "<group>";

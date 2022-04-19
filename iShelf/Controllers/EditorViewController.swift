@@ -10,6 +10,7 @@ import UIKit
 class EditorViewController: UIViewController {
     @IBOutlet private weak var _wallImageView: UIImageView!
     @IBOutlet private weak var _shelvesImageView: UIImageView!
+    @IBOutlet private weak var _previewImageView: UIImageView!
     
     private var _wall: Wall?
     private var _wallImage: UIImage?
@@ -18,6 +19,8 @@ class EditorViewController: UIViewController {
     private var _shelfIndex = 0
     private var _shelvesImage: UIImage?
     private var _shelvesImageTransition: UIView.AnimationOptions = .transitionFlipFromRight
+    
+    private let previewBrain = PreviewBrain()
     
     internal override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,17 @@ class EditorViewController: UIViewController {
     }
     @IBAction private func backgroundsButtonPressed(_ sender: UIButton) {
         dismiss(animated: true)
+    }
+    @IBAction func previewButtonPressed(_ sender: UIButton) {
+        _previewImageView.isHidden = _previewImageView.isHidden == false ? true : false
+
+        let preview = previewBrain.getPreview(by: 0)
+
+        UIView.transition(with: _previewImageView,
+                          duration: 0.2,
+                          options: .transitionFlipFromBottom,
+                          animations: { self._previewImageView.image = UIImage(named: preview.image) },
+                          completion: nil)
     }
     
     private func changeWallImage() {

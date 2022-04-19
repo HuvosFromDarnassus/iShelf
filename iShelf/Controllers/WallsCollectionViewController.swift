@@ -15,6 +15,8 @@ class WallsCollectionViewController: UICollectionViewController {
     
     public static let wallDefaultImageName = "wall_1"
     
+    private let _segueId = "goToEditorVC"
+    
     internal override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -40,35 +42,20 @@ class WallsCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    // MARK: UICollectionViewDelegate
+    internal override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: _segueId, sender: nil)
+    }
     
-    /*
-     // Uncomment this method to specify if the specified item should be highlighted during tracking
-     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment this method to specify if the specified item should be selected
-     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
-     */
-    
+    internal override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == _segueId {
+            if let indexPaths = collectionView.indexPathsForSelectedItems {
+                let destination = segue.destination as! EditorViewController
+                
+                let wall = wallBrain.getWall(by: indexPaths[0].row)
+                
+                destination.setWall(wall)
+                collectionView.deselectItem(at: indexPaths[0], animated: false)
+            }
+        }
+    }
 }

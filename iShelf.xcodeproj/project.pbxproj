@@ -18,6 +18,7 @@
 		650F95D7280EA8E20012F3FF /* IScalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95D6280EA8E20012F3FF /* IScalable.swift */; };
 		650F95D9280EA91F0012F3FF /* WallBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95D8280EA91F0012F3FF /* WallBrain.swift */; };
 		650F95DB280EA9400012F3FF /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95DA280EA9400012F3FF /* DeviceManager.swift */; };
+		650F95DD280EACB00012F3FF /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95DC280EACB00012F3FF /* EditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		650F95D6280EA8E20012F3FF /* IScalable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IScalable.swift; sourceTree = "<group>"; };
 		650F95D8280EA91F0012F3FF /* WallBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallBrain.swift; sourceTree = "<group>"; };
 		650F95DA280EA9400012F3FF /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
+		650F95DC280EACB00012F3FF /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				650F95D1280EA7CF0012F3FF /* WallsCollectionViewController.swift */,
 				650F95CE280EA7920012F3FF /* WallCollectionViewCell.swift */,
+				650F95DC280EACB00012F3FF /* EditorViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				650F95D2280EA7CF0012F3FF /* WallsCollectionViewController.swift in Sources */,
+				650F95DD280EACB00012F3FF /* EditorViewController.swift in Sources */,
 				650F95DB280EA9400012F3FF /* DeviceManager.swift in Sources */,
 				650F95CF280EA7920012F3FF /* WallCollectionViewCell.swift in Sources */,
 				650F95D9280EA91F0012F3FF /* WallBrain.swift in Sources */,

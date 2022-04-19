@@ -6,13 +6,13 @@
 //
 
 class PreviewBrain {
+    private let deviceManager = DeviceManager()
+    
     private let _previews: [Preview] = [
         Preview(image: "previewImage", device: DeviceManager.sizeClass.size2)
     ]
     
     private var _previewsForDevice: [Preview] = []
-    
-    private let deviceManager = DeviceManager()
     
     public init() {
         selectPreviewsForDevice()

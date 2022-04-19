@@ -6,6 +6,8 @@
 //
 
 class ShelfBrain {
+    private let deviceManager = DeviceManager()
+    
     private let _shelves: [Shelf] = [
         Shelf(image: "shelf_1", device: DeviceManager.sizeClass.size2),
         Shelf(image: "shelf_2", device: DeviceManager.sizeClass.size2),
@@ -16,10 +18,12 @@ class ShelfBrain {
     
     private var _shelvesForDevice: [Shelf] = []
     
-    private let deviceManager = DeviceManager()
-    
     public init() {
         selectShelvesForDevice()
+    }
+    
+    public func getShelf(by index: Int) -> Shelf {
+        return _shelvesForDevice[index]
     }
     
     public func getShelvesCount() -> Int {
@@ -28,9 +32,5 @@ class ShelfBrain {
     
     private func selectShelvesForDevice() {
         _shelvesForDevice = _shelves.filter( { $0.device == deviceManager.name } )
-    }
-    
-    public func getShelf(by index: Int) -> Shelf {
-        return _shelvesForDevice[index]
     }
 }

@@ -11,11 +11,11 @@ private let reuseIdentifier = "wallDataCell"
 
 class WallsCollectionViewController: UICollectionViewController {
     
-    private let wallBrain = WallBrain()
+    private let wallBrain: WallBrain = WallBrain()
     
-    public static let wallDefaultImageName = "wall_1"
+    public static let wallDefaultImageName: String = "wall_1"
     
-    private let _segueId = "goToEditorVC"
+    private let _segueId: String = "goToEditorVC"
     
     internal override func viewDidLoad() {
         super.viewDidLoad()

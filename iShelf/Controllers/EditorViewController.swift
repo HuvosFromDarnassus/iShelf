@@ -12,17 +12,17 @@ class EditorViewController: UIViewController {
     @IBOutlet private weak var _shelvesImageView: UIImageView!
     @IBOutlet private weak var _previewImageView: UIImageView!
     
-    private let _segueId = "goToInfoVC"
+    private let _segueId: String = "goToInfoVC"
     
     private var _wall: Wall?
     private var _wallImage: UIImage?
     
-    private let shelfBrain = ShelfBrain()
-    private var _shelfIndex = 0
+    private let shelfBrain: ShelfBrain = ShelfBrain()
+    private var _shelfIndex: Int = 0
     private var _shelvesImage: UIImage?
     private var _shelvesImageTransition: UIView.AnimationOptions = .transitionFlipFromRight
     
-    private let previewBrain = PreviewBrain()
+    private let previewBrain: PreviewBrain = PreviewBrain()
     
     internal override func viewDidLoad() {
         super.viewDidLoad()

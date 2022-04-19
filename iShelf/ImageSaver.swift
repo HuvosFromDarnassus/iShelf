@@ -26,10 +26,10 @@ class ImageSaver {
 
         UIGraphicsEndImageContext()
 
-        return writeToPhotos(image: newImage)
+        return writeToDevice(image: newImage)
     }
     
-    private static func writeToPhotos(image: UIImage) {
+    private static func writeToDevice(image: UIImage) {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
 }

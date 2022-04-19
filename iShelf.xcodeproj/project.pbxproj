@@ -21,6 +21,7 @@
 		650F95DD280EACB00012F3FF /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95DC280EACB00012F3FF /* EditorViewController.swift */; };
 		650F95DF280EAFEC0012F3FF /* Shelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95DE280EAFEC0012F3FF /* Shelf.swift */; };
 		650F95E1280EB0070012F3FF /* ShelfBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E0280EB0070012F3FF /* ShelfBrain.swift */; };
+		650F95E3280EB2C30012F3FF /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E2280EB2C30012F3FF /* ImageSaver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		650F95DC280EACB00012F3FF /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		650F95DE280EAFEC0012F3FF /* Shelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shelf.swift; sourceTree = "<group>"; };
 		650F95E0280EB0070012F3FF /* ShelfBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfBrain.swift; sourceTree = "<group>"; };
+		650F95E2280EB2C30012F3FF /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				650F95C4280EA6D60012F3FF /* LaunchScreen.storyboard */,
 				650F95C2280EA6D60012F3FF /* Assets.xcassets */,
 				650F95C7280EA6D60012F3FF /* Info.plist */,
+				650F95E2280EB2C30012F3FF /* ImageSaver.swift */,
 			);
 			path = iShelf;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				650F95CF280EA7920012F3FF /* WallCollectionViewCell.swift in Sources */,
 				650F95D9280EA91F0012F3FF /* WallBrain.swift in Sources */,
 				650F95D4280EA89C0012F3FF /* Wall.swift in Sources */,
+				650F95E3280EB2C30012F3FF /* ImageSaver.swift in Sources */,
 				650F95DF280EAFEC0012F3FF /* Shelf.swift in Sources */,
 				650F95BA280EA6D50012F3FF /* AppDelegate.swift in Sources */,
 				650F95D7280EA8E20012F3FF /* IScalable.swift in Sources */,
@@ -346,6 +350,7 @@
 				DEVELOPMENT_TEAM = 9D3QPUYX6Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iShelf/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "iShelf need access to Photos to save wallpaper";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -375,6 +380,7 @@
 				DEVELOPMENT_TEAM = 9D3QPUYX6Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iShelf/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "iShelf need access to Photos to save wallpaper";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

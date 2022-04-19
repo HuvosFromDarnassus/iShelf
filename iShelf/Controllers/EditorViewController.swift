@@ -9,7 +9,7 @@ import UIKit
 
 class EditorViewController: UIViewController {
     @IBOutlet private weak var _wallImageView: UIImageView!
-    @IBOutlet weak var _shelvesImageView: UIImageView!
+    @IBOutlet private weak var _shelvesImageView: UIImageView!
     
     private var _wall: Wall?
     private var _wallImage: UIImage?
@@ -26,14 +26,17 @@ class EditorViewController: UIViewController {
         changeShelvesImage()
     }
     
-    @IBAction func shelvesSwiped(_ sender: UISwipeGestureRecognizer) {
+    @IBAction private func shelvesSwiped(_ sender: UISwipeGestureRecognizer) {
         changeShelfIndex(by: sender.direction)
         changeShelfImageTransition(by: sender.direction)
         
         changeShelvesImage()
     }
+    @IBAction private func downloadButtonPressed(_ sender: UIButton) {
+        ImageSaver.mergeImages(topImage: _shelvesImage!, backImage: _wallImage!)
+    }
     @IBAction private func backgroundsButtonPressed(_ sender: UIButton) {
-        dismiss(animated: false)
+        dismiss(animated: true)
     }
     
     private func changeWallImage() {

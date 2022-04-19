@@ -85,8 +85,13 @@
                                     <action selector="backgroundsButtonPressed:" destination="jOl-CD-cYi" eventType="touchUpInside" id="rer-mt-Ure"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WGG-Xf-Pxh">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WGG-Xf-Pxh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Bpk-Pr-asP" appends="YES" id="Wjf-IL-56a"/>
+                                    <outletCollection property="gestureRecognizers" destination="95B-nD-s4A" appends="YES" id="3Xt-aI-Swn"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CXJ-ef-uaT"/>
@@ -111,6 +116,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zpA-Dc-264" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="Bpk-Pr-asP">
+                    <connections>
+                        <action selector="shelvesSwiped:" destination="jOl-CD-cYi" id="XBX-es-GtM"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="95B-nD-s4A">
+                    <connections>
+                        <action selector="shelvesSwiped:" destination="jOl-CD-cYi" id="N2O-0i-c3r"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="806" y="104"/>
         </scene>

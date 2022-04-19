@@ -19,6 +19,8 @@
 		650F95D9280EA91F0012F3FF /* WallBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95D8280EA91F0012F3FF /* WallBrain.swift */; };
 		650F95DB280EA9400012F3FF /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95DA280EA9400012F3FF /* DeviceManager.swift */; };
 		650F95DD280EACB00012F3FF /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95DC280EACB00012F3FF /* EditorViewController.swift */; };
+		650F95DF280EAFEC0012F3FF /* Shelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95DE280EAFEC0012F3FF /* Shelf.swift */; };
+		650F95E1280EB0070012F3FF /* ShelfBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E0280EB0070012F3FF /* ShelfBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		650F95D8280EA91F0012F3FF /* WallBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallBrain.swift; sourceTree = "<group>"; };
 		650F95DA280EA9400012F3FF /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		650F95DC280EACB00012F3FF /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		650F95DE280EAFEC0012F3FF /* Shelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shelf.swift; sourceTree = "<group>"; };
+		650F95E0280EB0070012F3FF /* ShelfBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				650F95D8280EA91F0012F3FF /* WallBrain.swift */,
+				650F95E0280EB0070012F3FF /* ShelfBrain.swift */,
 				650F95D3280EA89C0012F3FF /* Wall.swift */,
+				650F95DE280EAFEC0012F3FF /* Shelf.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,12 +186,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				650F95E1280EB0070012F3FF /* ShelfBrain.swift in Sources */,
 				650F95D2280EA7CF0012F3FF /* WallsCollectionViewController.swift in Sources */,
 				650F95DD280EACB00012F3FF /* EditorViewController.swift in Sources */,
 				650F95DB280EA9400012F3FF /* DeviceManager.swift in Sources */,
 				650F95CF280EA7920012F3FF /* WallCollectionViewCell.swift in Sources */,
 				650F95D9280EA91F0012F3FF /* WallBrain.swift in Sources */,
 				650F95D4280EA89C0012F3FF /* Wall.swift in Sources */,
+				650F95DF280EAFEC0012F3FF /* Shelf.swift in Sources */,
 				650F95BA280EA6D50012F3FF /* AppDelegate.swift in Sources */,
 				650F95D7280EA8E20012F3FF /* IScalable.swift in Sources */,
 				650F95BC280EA6D50012F3FF /* SceneDelegate.swift in Sources */,

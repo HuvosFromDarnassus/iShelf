@@ -31,7 +31,7 @@ class EditorViewController: UIViewController {
         changeWallImage()
         changeShelvesImage()
         
-        setUpModalView(cornerRadius: 15, alpha: 0.9)
+        setUpModalView(cornerRadius: 15, alpha: 0.7)
     }
     
     @IBAction private func shelvesSwiped(_ sender: UISwipeGestureRecognizer) {

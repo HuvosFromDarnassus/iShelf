@@ -13,7 +13,8 @@ class ImageSaver {
         let bottomImage = backImage
         let topImage = topImage
 
-        let size = backImage.size
+        let size = bottomImage.size
+        
         UIGraphicsBeginImageContextWithOptions(size, false, bottomImage.scale)
 
         let areaSize = CGRect(x: 0, y: 0, width: size.width, height: size.height)

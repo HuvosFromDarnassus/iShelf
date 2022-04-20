@@ -13,9 +13,9 @@ class WallsCollectionViewController: UICollectionViewController {
     
     private let wallBrain: WallBrain = WallBrain()
     
-    public static let wallDefaultImageName: String = "wall_1"
-    
     private let _segueId: String = "goToEditorVC"
+    
+    public static let wallDefaultImageName: String = "wall_1"
     
     internal override func viewDidLoad() {
         super.viewDidLoad()

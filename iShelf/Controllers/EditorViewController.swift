@@ -110,7 +110,7 @@ class EditorViewController: UIViewController {
         }
     }
     
-    func setUpModalView(cornerRadius: CGFloat, alpha: CGFloat) {
+    private func setUpModalView(cornerRadius: CGFloat, alpha: CGFloat) {
         _modalSuccessView.layer.cornerRadius = cornerRadius
         _modalSuccessView.alpha = alpha
     }

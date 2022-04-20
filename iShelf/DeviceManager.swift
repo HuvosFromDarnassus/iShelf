@@ -8,7 +8,7 @@
 import UIKit
 
 class DeviceManager: UIDevice {
-    public static var sizeClass = (
+    public static let sizeClass = (
         size0: "iPhone 13 Pro Max",
         size1: "iPhone 11 Pro Max",
         size2: "iPhone 11",

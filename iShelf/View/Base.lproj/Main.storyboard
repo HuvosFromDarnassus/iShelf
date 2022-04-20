@@ -138,6 +138,30 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ds-so-E0N">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nwk-GR-qQX">
+                                        <rect key="frame" x="61" y="40.5" width="128" height="169.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doneIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kfr-hu-jrj">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgU-Ee-Ur4">
+                                                <rect key="frame" x="28" y="136" width="72.5" height="33.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Nwk-GR-qQX" firstAttribute="centerY" secondItem="5Ds-so-E0N" secondAttribute="centerY" id="Qky-GL-brB"/>
+                                    <constraint firstItem="Nwk-GR-qQX" firstAttribute="centerX" secondItem="5Ds-so-E0N" secondAttribute="centerX" id="vSX-Fu-bnj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CXJ-ef-uaT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -159,11 +183,16 @@
                             <constraint firstItem="CXJ-ef-uaT" firstAttribute="trailing" secondItem="MeT-xC-vVj" secondAttribute="trailing" constant="240" id="UyK-BN-UkP"/>
                             <constraint firstItem="n9N-dL-7fQ" firstAttribute="top" secondItem="auw-eJ-e6P" secondAttribute="top" id="Wal-CY-PKe"/>
                             <constraint firstItem="n9N-dL-7fQ" firstAttribute="leading" secondItem="auw-eJ-e6P" secondAttribute="leading" id="ddg-nN-J2h"/>
+                            <constraint firstItem="5Ds-so-E0N" firstAttribute="centerY" secondItem="9ZL-8j-Va1" secondAttribute="centerY" id="eg0-LJ-sN7"/>
+                            <constraint firstItem="5Ds-so-E0N" firstAttribute="leading" secondItem="CXJ-ef-uaT" secondAttribute="leading" constant="82" id="fH9-6a-C8O"/>
                             <constraint firstAttribute="trailing" secondItem="n9N-dL-7fQ" secondAttribute="trailing" id="i7t-4I-FqT"/>
+                            <constraint firstItem="5Ds-so-E0N" firstAttribute="centerX" secondItem="3H1-hQ-6qf" secondAttribute="centerX" id="meJ-Ij-3YI"/>
                             <constraint firstAttribute="trailing" secondItem="3H1-hQ-6qf" secondAttribute="trailing" id="uQY-iH-SGK"/>
+                            <constraint firstItem="5Ds-so-E0N" firstAttribute="top" secondItem="auw-eJ-e6P" secondAttribute="top" constant="323" id="v2S-zU-Oh8"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="_modalSuccessView" destination="5Ds-so-E0N" id="9Ye-AN-I3S"/>
                         <outlet property="_previewImageView" destination="n9N-dL-7fQ" id="1wz-QQ-1Aj"/>
                         <outlet property="_shelvesImageView" destination="WGG-Xf-Pxh" id="pOT-OW-PG8"/>
                         <outlet property="_wallImageView" destination="9ZL-8j-Va1" id="Or9-PE-cyf"/>
@@ -281,6 +310,7 @@
     <resources>
         <image name="appIcon" width="341" height="341"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="doneIcon" width="128" height="128"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>

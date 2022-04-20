@@ -11,6 +11,7 @@ class EditorViewController: UIViewController {
     @IBOutlet private weak var _wallImageView: UIImageView!
     @IBOutlet private weak var _shelvesImageView: UIImageView!
     @IBOutlet private weak var _previewImageView: UIImageView!
+    @IBOutlet private weak var _modalSuccessView: UIView!
     
     private let _segueId: String = "goToInfoVC"
     
@@ -29,6 +30,8 @@ class EditorViewController: UIViewController {
         
         changeWallImage()
         changeShelvesImage()
+        
+        setUpModalView(cornerRadius: 15, alpha: 0.9)
     }
     
     @IBAction private func shelvesSwiped(_ sender: UISwipeGestureRecognizer) {
@@ -39,6 +42,16 @@ class EditorViewController: UIViewController {
     }
     @IBAction private func downloadButtonPressed(_ sender: UIButton) {
         ImageSaver.mergeImages(topImage: _shelvesImage!, backImage: _wallImage!)
+        
+        UIView.transition(with: _modalSuccessView,
+                          duration: 0.3,
+                          options: .transitionFlipFromBottom,
+                          animations: { self._modalSuccessView.isHidden = false },
+                          completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self._modalSuccessView.isHidden = true
+        }
     }
     @IBAction private func backgroundsButtonPressed(_ sender: UIButton) {
         dismiss(animated: true)
@@ -95,6 +108,11 @@ class EditorViewController: UIViewController {
         } else if direction == .right {
             _shelvesImageTransition = .transitionFlipFromLeft
         }
+    }
+    
+    func setUpModalView(cornerRadius: CGFloat, alpha: CGFloat) {
+        _modalSuccessView.layer.cornerRadius = cornerRadius
+        _modalSuccessView.alpha = alpha
     }
     
     public func setWall(_ wall: Wall) {

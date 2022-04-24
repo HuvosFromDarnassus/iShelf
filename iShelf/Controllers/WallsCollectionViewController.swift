@@ -19,6 +19,8 @@ class WallsCollectionViewController: UICollectionViewController {
     
     internal override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupCollectionCellSize(itemsPerRow: 3, cellHeight: 300)
     }
     
     internal override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -54,5 +56,20 @@ class WallsCollectionViewController: UICollectionViewController {
                 collectionView.deselectItem(at: indexPaths[0], animated: false)
             }
         }
+    }
+    
+    private func setupCollectionCellSize(itemsPerRow: Int, cellHeight: Int) {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        layout.sectionInset = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
+        
+        let screenSize = UIScreen.main.bounds
+        
+        layout.itemSize = CGSize(width: Int(screenSize.width) / itemsPerRow - 1, height: cellHeight)
+        
+        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 1
+        
+        self.collectionView.collectionViewLayout = layout
     }
 }

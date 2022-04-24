@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "wall_5.png",
+      "filename" : "wall_12.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "wall_5@2x.png",
+      "filename" : "wall_12@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "wall_5@3x.png",
+      "filename" : "wall_12@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

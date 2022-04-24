@@ -24,6 +24,7 @@
 		650F95E3280EB2C30012F3FF /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E2280EB2C30012F3FF /* ImageSaver.swift */; };
 		650F95E5280EB7D60012F3FF /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E4280EB7D60012F3FF /* Preview.swift */; };
 		650F95E7280EB7EC0012F3FF /* PreviewBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E6280EB7EC0012F3FF /* PreviewBrain.swift */; };
+		650F95EA281563C60012F3FF /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E9281563C60012F3FF /* DeviceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		650F95E2280EB2C30012F3FF /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		650F95E4280EB7D60012F3FF /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		650F95E6280EB7EC0012F3FF /* PreviewBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewBrain.swift; sourceTree = "<group>"; };
+		650F95E9281563C60012F3FF /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				650F95B9280EA6D50012F3FF /* AppDelegate.swift */,
 				650F95BB280EA6D50012F3FF /* SceneDelegate.swift */,
+				650F95E9281563C60012F3FF /* DeviceModel.swift */,
 				650F95DA280EA9400012F3FF /* DeviceManager.swift */,
 				650F95E2280EB2C30012F3FF /* ImageSaver.swift */,
 				650F95D6280EA8E20012F3FF /* IScalable.swift */,
@@ -197,6 +200,7 @@
 			files = (
 				650F95E1280EB0070012F3FF /* ShelfBrain.swift in Sources */,
 				650F95D2280EA7CF0012F3FF /* WallsCollectionViewController.swift in Sources */,
+				650F95EA281563C60012F3FF /* DeviceModel.swift in Sources */,
 				650F95DD280EACB00012F3FF /* EditorViewController.swift in Sources */,
 				650F95E7280EB7EC0012F3FF /* PreviewBrain.swift in Sources */,
 				650F95DB280EA9400012F3FF /* DeviceManager.swift in Sources */,
@@ -369,7 +373,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danieltvorun.iShelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -399,7 +403,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danieltvorun.iShelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yBD-ew-79f">
-                            <size key="itemSize" width="130" height="298"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="1" minimumInteritemSpacing="1" id="yBD-ew-79f">
+                            <size key="itemSize" width="130" height="300"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -72,7 +72,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9ZL-8j-Va1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9ZL-8j-Va1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WGG-Xf-Pxh">
@@ -84,7 +84,7 @@
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeT-xC-vVj">
-                                <rect key="frame" x="10" y="54" width="164" height="38"/>
+                                <rect key="frame" x="10" y="54" width="157" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title=" Backgrounds">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
@@ -98,13 +98,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="3H1-hQ-6qf">
-                                <rect key="frame" x="0.0" y="821" width="414" height="38"/>
+                                <rect key="frame" x="0.0" y="822" width="414" height="37"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfb-KP-LWg">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="107" height="37"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="info.circle.fill" catalog="system" title=" Info">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="19"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -112,13 +112,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1F-Ni-QhH">
-                                        <rect key="frame" x="106" y="0.0" width="177" height="38"/>
+                                        <rect key="frame" x="107" y="0.0" width="175.5" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="XTX-TP-IYd"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.down.fill" catalog="system" title=" Download">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="19"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -126,10 +126,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="247" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWe-Hb-LKI">
-                                        <rect key="frame" x="283" y="0.0" width="131" height="38"/>
+                                        <rect key="frame" x="282.5" y="0.0" width="131.5" height="37"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="photo.artframe" catalog="system" title=" Icons">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="19"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -163,8 +163,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="Nwk-GR-qQX" firstAttribute="centerY" secondItem="5Ds-so-E0N" secondAttribute="centerY" id="Qky-GL-brB"/>
-                                    <constraint firstItem="Nwk-GR-qQX" firstAttribute="centerX" secondItem="5Ds-so-E0N" secondAttribute="centerX" id="vSX-Fu-bnj"/>
+                                    <constraint firstItem="Nwk-GR-qQX" firstAttribute="centerY" secondItem="5Ds-so-E0N" secondAttribute="centerY" id="2fs-uo-gC0"/>
+                                    <constraint firstItem="Nwk-GR-qQX" firstAttribute="centerX" secondItem="5Ds-so-E0N" secondAttribute="centerX" id="JCP-f9-p85"/>
+                                    <constraint firstAttribute="width" constant="250" id="LjY-hs-rjF"/>
+                                    <constraint firstAttribute="height" constant="250" id="Rdq-eq-Lsc"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -181,19 +183,17 @@
                             <constraint firstItem="9ZL-8j-Va1" firstAttribute="top" secondItem="auw-eJ-e6P" secondAttribute="top" id="A1Q-bm-3RK"/>
                             <constraint firstAttribute="trailing" secondItem="WGG-Xf-Pxh" secondAttribute="trailing" id="Cbw-OC-FA8"/>
                             <constraint firstItem="MeT-xC-vVj" firstAttribute="leading" secondItem="CXJ-ef-uaT" secondAttribute="leading" constant="10" id="Fhy-dm-klH"/>
-                            <constraint firstItem="3H1-hQ-6qf" firstAttribute="top" secondItem="CXJ-ef-uaT" secondAttribute="top" constant="777" id="GR3-lG-4ls"/>
+                            <constraint firstItem="CXJ-ef-uaT" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MeT-xC-vVj" secondAttribute="trailing" symbolic="YES" id="ISu-UW-Xeo"/>
+                            <constraint firstItem="CXJ-ef-uaT" firstAttribute="bottom" secondItem="3H1-hQ-6qf" secondAttribute="bottom" constant="3" id="NbL-IW-r9y"/>
                             <constraint firstAttribute="bottom" secondItem="WGG-Xf-Pxh" secondAttribute="bottom" id="Nto-Q5-pCK"/>
                             <constraint firstItem="9ZL-8j-Va1" firstAttribute="leading" secondItem="auw-eJ-e6P" secondAttribute="leading" id="SzA-Ar-CVN"/>
                             <constraint firstItem="MeT-xC-vVj" firstAttribute="top" secondItem="CXJ-ef-uaT" secondAttribute="top" constant="10" id="TK1-SW-fYw"/>
-                            <constraint firstItem="CXJ-ef-uaT" firstAttribute="trailing" secondItem="MeT-xC-vVj" secondAttribute="trailing" constant="240" id="UyK-BN-UkP"/>
                             <constraint firstItem="n9N-dL-7fQ" firstAttribute="top" secondItem="auw-eJ-e6P" secondAttribute="top" id="Wal-CY-PKe"/>
+                            <constraint firstItem="5Ds-so-E0N" firstAttribute="centerX" secondItem="auw-eJ-e6P" secondAttribute="centerX" id="WqL-2V-pS5"/>
                             <constraint firstItem="n9N-dL-7fQ" firstAttribute="leading" secondItem="auw-eJ-e6P" secondAttribute="leading" id="ddg-nN-J2h"/>
-                            <constraint firstItem="5Ds-so-E0N" firstAttribute="centerY" secondItem="9ZL-8j-Va1" secondAttribute="centerY" id="eg0-LJ-sN7"/>
-                            <constraint firstItem="5Ds-so-E0N" firstAttribute="leading" secondItem="CXJ-ef-uaT" secondAttribute="leading" constant="82" id="fH9-6a-C8O"/>
                             <constraint firstAttribute="trailing" secondItem="n9N-dL-7fQ" secondAttribute="trailing" id="i7t-4I-FqT"/>
-                            <constraint firstItem="5Ds-so-E0N" firstAttribute="centerX" secondItem="3H1-hQ-6qf" secondAttribute="centerX" id="meJ-Ij-3YI"/>
+                            <constraint firstItem="5Ds-so-E0N" firstAttribute="centerY" secondItem="auw-eJ-e6P" secondAttribute="centerY" id="jNz-9E-6Rn"/>
                             <constraint firstAttribute="trailing" secondItem="3H1-hQ-6qf" secondAttribute="trailing" id="uQY-iH-SGK"/>
-                            <constraint firstItem="5Ds-so-E0N" firstAttribute="top" secondItem="auw-eJ-e6P" secondAttribute="top" constant="323" id="v2S-zU-Oh8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -227,10 +227,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="hOx-bC-CHj" userLabel="Superstack">
-                                <rect key="frame" x="80" y="0.0" width="254" height="671.5"/>
+                                <rect key="frame" x="84.5" y="0.0" width="245.5" height="616.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="pHM-le-CEl" userLabel="Top stack">
-                                        <rect key="frame" x="62" y="0.0" width="130" height="311.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="pHM-le-CEl" userLabel="Top stack">
+                                        <rect key="frame" x="57.5" y="0.0" width="130" height="261.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.3.horizontal" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2pg-ch-fzx">
                                                 <rect key="frame" x="45" y="5" width="40" height="30.5"/>
@@ -242,7 +242,7 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="W7H-mZ-h7r" userLabel="Logo stack">
-                                                <rect key="frame" x="0.0" y="140" width="130" height="171.5"/>
+                                                <rect key="frame" x="0.0" y="90" width="130" height="171.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appIcon" translatesAutoresizingMaskIntoConstraints="NO" id="yfC-CF-uUB">
                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
@@ -262,35 +262,35 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Xlj-Oh-6Bi" userLabel="Bottom stack">
-                                        <rect key="frame" x="0.0" y="391.5" width="254" height="280"/>
+                                        <rect key="frame" x="0.0" y="341.5" width="245.5" height="275"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Select a wall background" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qoy-W6-URa">
-                                                <rect key="frame" x="0.0" y="0.0" width="236" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="228.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Select a shelves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqX-7V-pRS">
-                                                <rect key="frame" x="0.0" y="64" width="162" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="63" width="157" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Tap on Download button" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyM-HF-N7t">
-                                                <rect key="frame" x="0.0" y="128" width="234.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="126" width="226.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Allow access to Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lB8-w6-Eoa">
-                                                <rect key="frame" x="0.0" y="192" width="223.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="189" width="216" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5. Use an image as wallpaper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-qt-JzU">
-                                                <rect key="frame" x="0.0" y="256" width="254" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="252" width="245.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>

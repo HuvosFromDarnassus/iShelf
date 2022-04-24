@@ -7,18 +7,18 @@
 
 struct Preview: IScalable {
     internal var _image: String
-    internal var _device: String
+    internal var _devices: [DeviceModel]
     
     public var image: String {
         return _image
     }
     
-    public var device: String {
-        return _device
+    public var devices: [DeviceModel] {
+        return _devices
     }
     
-    init(image: String, device: String) {
+    init(image: String, devices: [DeviceModel]) {
         _image = image
-        _device = device
+        _devices = devices
     }
 }

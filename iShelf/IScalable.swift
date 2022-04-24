@@ -7,5 +7,5 @@
 
 protocol IScalable {
     var _image: String { get }
-    var _device: String { get }
+    var _devices: [DeviceModel] { get }
 }

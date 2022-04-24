@@ -13,7 +13,7 @@ class ImageSaver {
         let bottomImage = backImage
         let topImage = topImage
 
-        let size = bottomImage.size
+        let size = topImage.size
         
         UIGraphicsBeginImageContextWithOptions(size, false, bottomImage.scale)
 

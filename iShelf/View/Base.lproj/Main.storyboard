@@ -83,6 +83,9 @@
                                     <outletCollection property="gestureRecognizers" destination="95B-nD-s4A" appends="YES" id="3Xt-aI-Swn"/>
                                 </connections>
                             </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n9N-dL-7fQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeT-xC-vVj">
                                 <rect key="frame" x="10" y="54" width="157" height="38"/>
                                 <state key="normal" title="Button"/>
@@ -94,9 +97,6 @@
                                     <action selector="backgroundsButtonPressed:" destination="jOl-CD-cYi" eventType="touchUpInside" id="rer-mt-Ure"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n9N-dL-7fQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="3H1-hQ-6qf">
                                 <rect key="frame" x="0.0" y="822" width="414" height="37"/>
                                 <subviews>

@@ -6,13 +6,13 @@
 //
 
 struct Wall {
-    internal var _image: String
+    internal var _imageName: String
     
-    public var image: String {
-        return _image
+    public var imageName: String {
+        return _imageName
     }
     
-    init(image: String) {
-        _image = image
+    init(imageName: String) {
+        _imageName = imageName
     }
 }

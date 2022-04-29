@@ -22,8 +22,7 @@ class ImageSaver {
 
         topImage.draw(in: areaSize, blendMode: .normal, alpha: 1.0)
 
-        let defaultImage = UIImage(named: WallsCollectionViewController.wallDefaultImageName)
-        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext() ?? defaultImage!
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
 
         UIGraphicsEndImageContext()
 

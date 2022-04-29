@@ -11,7 +11,8 @@ class EditorViewController: UIViewController {
     @IBOutlet private weak var _wallImageView: UIImageView!
     @IBOutlet private weak var _shelvesImageView: UIImageView!
     @IBOutlet private weak var _previewImageView: UIImageView!
-    @IBOutlet private weak var _modalSuccessView: UIView!
+    @IBOutlet private weak var _successModalView: UIView!
+    @IBOutlet private var _buttons: [UIButton]?
     
     private let _segueId: String = "goToInfoVC"
     
@@ -31,7 +32,8 @@ class EditorViewController: UIViewController {
         changeWallImage()
         changeShelvesImage()
         
-        setUpModalView(cornerRadius: 15, alpha: 0.7)
+        setUpButtons(opacity: 0.9, offsetWidth: 3, offsetHeight: 3, radius: 3)
+        setUpSuccessModalView(cornerRadius: 15, alpha: 0.7)
     }
     
     @IBAction private func shelvesSwiped(_ sender: UISwipeGestureRecognizer) {
@@ -43,14 +45,14 @@ class EditorViewController: UIViewController {
     @IBAction private func downloadButtonPressed(_ sender: UIButton) {
         ImageSaver.mergeImages(topImage: _shelvesImage!, backImage: _wallImage!)
         
-        UIView.transition(with: _modalSuccessView,
+        UIView.transition(with: _successModalView,
                           duration: 0.3,
                           options: .transitionFlipFromBottom,
-                          animations: { self._modalSuccessView.isHidden = false },
+                          animations: { self._successModalView.isHidden = false },
                           completion: nil)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self._modalSuccessView.isHidden = true
+            self._successModalView.isHidden = true
         }
     }
     @IBAction private func backgroundsButtonPressed(_ sender: UIButton) {
@@ -60,25 +62,28 @@ class EditorViewController: UIViewController {
         performSegue(withIdentifier: _segueId, sender: self)
     }
     @IBAction private func previewButtonPressed(_ sender: UIButton) {
-        _previewImageView.isHidden = _previewImageView.isHidden == false ? true : false
-
+        _previewImageView.isHidden = !_previewImageView.isHidden
+        
+        sender.isSelected = !_previewImageView.isHidden
+        sender.setTitleColor(.cyan, for: .selected)
+        
         let preview = previewBrain.getPreview(by: 0)
 
         UIView.transition(with: _previewImageView,
                           duration: 0.2,
                           options: .transitionFlipFromBottom,
-                          animations: { self._previewImageView.image = UIImage(named: preview.image) },
+                          animations: { self._previewImageView.image = UIImage(named: preview.imageName) },
                           completion: nil)
     }
     
     private func changeWallImage() {
-        _wallImage = UIImage(named: _wall?.image ?? WallsCollectionViewController.wallDefaultImageName)
+        _wallImage = UIImage(named: _wall?.imageName ?? WallsCollectionViewController.wallDefaultImageName)
         _wallImageView.image = _wallImage
     }
     
     private func changeShelvesImage() {
         let shelf = shelfBrain.getShelf(by: _shelfIndex)
-        _shelvesImage = UIImage(named: shelf.image)
+        _shelvesImage = UIImage(named: shelf.imageName)
         
         UIView.transition(with: _shelvesImageView,
                           duration: 0.2,
@@ -110,9 +115,17 @@ class EditorViewController: UIViewController {
         }
     }
     
-    private func setUpModalView(cornerRadius: CGFloat, alpha: CGFloat) {
-        _modalSuccessView.layer.cornerRadius = cornerRadius
-        _modalSuccessView.alpha = alpha
+    private func setUpSuccessModalView(cornerRadius: CGFloat, alpha: CGFloat) {
+        _successModalView.layer.cornerRadius = cornerRadius
+        _successModalView.alpha = alpha
+    }
+    
+    private func setUpButtons(opacity: Float, offsetWidth: CGFloat, offsetHeight: CGFloat, radius: CGFloat) {
+        _buttons?.forEach({
+            $0.layer.shadowOpacity = opacity
+            $0.layer.shadowOffset = CGSize(width: offsetWidth, height: offsetHeight)
+            $0.layer.shadowRadius = radius
+        })
     }
     
     public func setWall(_ wall: Wall) {

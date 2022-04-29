@@ -6,19 +6,19 @@
 //
 
 struct Preview: IScalable {
-    internal var _image: String
+    internal var _imageName: String
     internal var _devices: [DeviceModel]
     
-    public var image: String {
-        return _image
+    public var imageName: String {
+        return _imageName
     }
     
     public var devices: [DeviceModel] {
         return _devices
     }
     
-    init(image: String, devices: [DeviceModel]) {
-        _image = image
+    init(imageName: String, devices: [DeviceModel]) {
+        _imageName = imageName
         _devices = devices
     }
 }

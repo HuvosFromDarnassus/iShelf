@@ -6,6 +6,6 @@
 //
 
 protocol IScalable {
-    var _image: String { get }
+    var _imageName: String { get }
     var _devices: [DeviceModel] { get }
 }

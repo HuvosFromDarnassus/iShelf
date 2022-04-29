@@ -36,7 +36,7 @@ class WallsCollectionViewController: UICollectionViewController {
         
         let wall = wallBrain.getWall(by: indexPath.row)
         
-        cell.setImage(UIImage(named: wall.image))
+        cell.setImage(UIImage(named: wall.imageName))
         
         return cell
     }

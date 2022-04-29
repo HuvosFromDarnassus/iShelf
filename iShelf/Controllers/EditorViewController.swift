@@ -32,7 +32,7 @@ class EditorViewController: UIViewController {
         changeWallImage()
         changeShelvesImage()
         
-        setUpButtons(opacity: 0.9, offsetWidth: 3, offsetHeight: 3, radius: 3)
+        setUpButtons(opacity: 0.8, offsetWidth: 3, offsetHeight: 3, radius: 4)
         setUpSuccessModalView(cornerRadius: 15, alpha: 0.7)
     }
     
@@ -50,6 +50,8 @@ class EditorViewController: UIViewController {
                           options: .transitionFlipFromBottom,
                           animations: { self._successModalView.isHidden = false },
                           completion: nil)
+        
+        vibrateSuccess()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self._successModalView.isHidden = true
@@ -126,6 +128,11 @@ class EditorViewController: UIViewController {
             $0.layer.shadowOffset = CGSize(width: offsetWidth, height: offsetHeight)
             $0.layer.shadowRadius = radius
         })
+    }
+    
+    private func vibrateSuccess() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
     }
     
     public func setWall(_ wall: Wall) {

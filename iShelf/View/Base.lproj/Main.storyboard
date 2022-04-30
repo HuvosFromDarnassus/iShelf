@@ -168,10 +168,52 @@
                                     <constraint firstAttribute="height" constant="250" id="Rdq-eq-Lsc"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haw-Pg-bfV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="center" distribution="equalCentering" alignment="center" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="hme-c6-RVz">
+                                        <rect key="frame" x="30" y="423" width="354" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipe_right_icon" translatesAutoresizingMaskIntoConstraints="NO" id="PMg-G3-moS">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="q7v-Bb-T9w"/>
+                                                    <constraint firstAttribute="width" constant="50" id="yH6-sr-jin"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left or right" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="7c8-sj-VRD">
+                                                <rect key="frame" x="102.5" y="13.5" width="149.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipe_left_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nmE-Zi-7nu">
+                                                <rect key="frame" x="304" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="6Ns-Q3-YAk"/>
+                                                    <constraint firstAttribute="height" constant="50" id="JmK-tx-fbm"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hme-c6-RVz" secondAttribute="trailing" constant="30" id="6cX-z6-LZi"/>
+                                    <constraint firstItem="hme-c6-RVz" firstAttribute="leading" secondItem="haw-Pg-bfV" secondAttribute="leading" constant="30" id="MIf-lW-ONa"/>
+                                    <constraint firstItem="hme-c6-RVz" firstAttribute="centerX" secondItem="haw-Pg-bfV" secondAttribute="centerX" id="Yn0-c1-Ju2"/>
+                                    <constraint firstItem="hme-c6-RVz" firstAttribute="centerY" secondItem="haw-Pg-bfV" secondAttribute="centerY" id="abo-3R-obQ"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ARZ-P9-fAs" appends="YES" id="Cjw-FZ-7pi"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CXJ-ef-uaT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="haw-Pg-bfV" firstAttribute="leading" secondItem="auw-eJ-e6P" secondAttribute="leading" id="2Co-Q7-8Ec"/>
                             <constraint firstAttribute="bottom" secondItem="9ZL-8j-Va1" secondAttribute="bottom" id="3HK-1r-lbE"/>
                             <constraint firstItem="3H1-hQ-6qf" firstAttribute="leading" secondItem="auw-eJ-e6P" secondAttribute="leading" id="40W-i8-1wB"/>
                             <constraint firstAttribute="bottom" secondItem="n9N-dL-7fQ" secondAttribute="bottom" id="4RO-vf-oU1"/>
@@ -181,6 +223,8 @@
                             <constraint firstItem="WGG-Xf-Pxh" firstAttribute="leading" secondItem="auw-eJ-e6P" secondAttribute="leading" id="9R2-gf-sEw"/>
                             <constraint firstItem="9ZL-8j-Va1" firstAttribute="top" secondItem="auw-eJ-e6P" secondAttribute="top" id="A1Q-bm-3RK"/>
                             <constraint firstAttribute="trailing" secondItem="WGG-Xf-Pxh" secondAttribute="trailing" id="Cbw-OC-FA8"/>
+                            <constraint firstAttribute="bottom" secondItem="haw-Pg-bfV" secondAttribute="bottom" id="Dfi-fL-eZd"/>
+                            <constraint firstItem="haw-Pg-bfV" firstAttribute="top" secondItem="auw-eJ-e6P" secondAttribute="top" id="ETd-Gg-mrt"/>
                             <constraint firstItem="MeT-xC-vVj" firstAttribute="leading" secondItem="CXJ-ef-uaT" secondAttribute="leading" constant="10" id="Fhy-dm-klH"/>
                             <constraint firstItem="CXJ-ef-uaT" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MeT-xC-vVj" secondAttribute="trailing" symbolic="YES" id="ISu-UW-Xeo"/>
                             <constraint firstItem="CXJ-ef-uaT" firstAttribute="bottom" secondItem="3H1-hQ-6qf" secondAttribute="bottom" constant="3" id="NbL-IW-r9y"/>
@@ -189,16 +233,19 @@
                             <constraint firstItem="MeT-xC-vVj" firstAttribute="top" secondItem="CXJ-ef-uaT" secondAttribute="top" id="TK1-SW-fYw"/>
                             <constraint firstItem="n9N-dL-7fQ" firstAttribute="top" secondItem="auw-eJ-e6P" secondAttribute="top" id="Wal-CY-PKe"/>
                             <constraint firstItem="5Ds-so-E0N" firstAttribute="centerX" secondItem="auw-eJ-e6P" secondAttribute="centerX" id="WqL-2V-pS5"/>
+                            <constraint firstAttribute="trailing" secondItem="haw-Pg-bfV" secondAttribute="trailing" id="aD5-L6-wzl"/>
                             <constraint firstItem="n9N-dL-7fQ" firstAttribute="leading" secondItem="auw-eJ-e6P" secondAttribute="leading" id="ddg-nN-J2h"/>
                             <constraint firstAttribute="trailing" secondItem="n9N-dL-7fQ" secondAttribute="trailing" id="i7t-4I-FqT"/>
                             <constraint firstItem="5Ds-so-E0N" firstAttribute="centerY" secondItem="auw-eJ-e6P" secondAttribute="centerY" id="jNz-9E-6Rn"/>
                             <constraint firstAttribute="trailing" secondItem="3H1-hQ-6qf" secondAttribute="trailing" id="uQY-iH-SGK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="bRn-6H-9vx"/>
                     <connections>
                         <outlet property="_previewImageView" destination="n9N-dL-7fQ" id="1wz-QQ-1Aj"/>
                         <outlet property="_shelvesImageView" destination="WGG-Xf-Pxh" id="pOT-OW-PG8"/>
                         <outlet property="_successModalView" destination="5Ds-so-E0N" id="PoT-mp-6dW"/>
+                        <outlet property="_tutorialOverlayView" destination="haw-Pg-bfV" id="zIP-iy-HUV"/>
                         <outlet property="_wallImageView" destination="9ZL-8j-Va1" id="Or9-PE-cyf"/>
                         <outletCollection property="_buttons" destination="MeT-xC-vVj" collectionClass="NSMutableArray" id="2W3-Yl-l6d"/>
                         <outletCollection property="_buttons" destination="nfb-KP-LWg" collectionClass="NSMutableArray" id="ocy-ec-yOM"/>
@@ -218,19 +265,24 @@
                         <action selector="shelvesSwiped:" destination="jOl-CD-cYi" id="N2O-0i-c3r"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer id="ARZ-P9-fAs">
+                    <connections>
+                        <action selector="tutorialOverlayTaped:" destination="jOl-CD-cYi" id="k7E-j7-mXH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="806" y="104"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="QsA-eH-arh">
             <objects>
-                <viewController id="nhm-pg-Pyx" sceneMemberID="viewController">
+                <viewController id="nhm-pg-Pyx" customClass="InfoViewController" customModule="iShelf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pWw-iz-Rqc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="hOx-bC-CHj" userLabel="Superstack">
-                                <rect key="frame" x="84.5" y="0.0" width="245.5" height="616.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="hOx-bC-CHj" userLabel="Superstack">
+                                <rect key="frame" x="84.5" y="0.0" width="245.5" height="591.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="pHM-le-CEl" userLabel="Top stack">
                                         <rect key="frame" x="57.5" y="0.0" width="130" height="261.5"/>
@@ -264,35 +316,47 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Xlj-Oh-6Bi" userLabel="Bottom stack">
-                                        <rect key="frame" x="0.0" y="341.5" width="245.5" height="275"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Xlj-Oh-6Bi" userLabel="Bottom stack">
+                                        <rect key="frame" x="0.0" y="316.5" width="245.5" height="275"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Select a wall background" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qoy-W6-URa">
-                                                <rect key="frame" x="0.0" y="0.0" width="228.5" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="228.5" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Select a shelves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqX-7V-pRS">
-                                                <rect key="frame" x="0.0" y="63" width="157" height="23"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ug9-3c-6IB">
+                                                <rect key="frame" x="0.0" y="61" width="242" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Select a shelves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqX-7V-pRS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="157" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTR-TB-rAK">
+                                                        <rect key="frame" x="157" y="0.0" width="85" height="31"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title=" How?"/>
+                                                        <connections>
+                                                            <action selector="shelvesTutorialButtonPressed:" destination="nhm-pg-Pyx" eventType="touchUpInside" id="uDp-GU-Fkp"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Tap on Download button" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyM-HF-N7t">
-                                                <rect key="frame" x="0.0" y="126" width="226.5" height="23"/>
+                                                <rect key="frame" x="0.0" y="122" width="226.5" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Allow access to Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lB8-w6-Eoa">
-                                                <rect key="frame" x="0.0" y="189" width="216" height="23"/>
+                                                <rect key="frame" x="0.0" y="183" width="216" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5. Use an image as wallpaper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdx-qt-JzU">
-                                                <rect key="frame" x="0.0" y="252" width="245.5" height="23"/>
+                                                <rect key="frame" x="0.0" y="244" width="245.5" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -309,12 +373,18 @@
                             <constraint firstItem="hOx-bC-CHj" firstAttribute="centerX" secondItem="pWw-iz-Rqc" secondAttribute="centerX" id="tz7-hC-68r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="jOl-CD-cYi" kind="presentation" identifier="backToEditorVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="d6t-re-wMe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKK-ym-aeb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1775" y="104"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="d6t-re-wMe"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="appIcon" width="341" height="341"/>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
@@ -323,6 +393,8 @@
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
+        <image name="swipe_left_icon" width="170.5" height="170.5"/>
+        <image name="swipe_right_icon" width="170.5" height="170.5"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

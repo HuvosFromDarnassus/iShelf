@@ -25,6 +25,7 @@
 		650F95E5280EB7D60012F3FF /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E4280EB7D60012F3FF /* Preview.swift */; };
 		650F95E7280EB7EC0012F3FF /* PreviewBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E6280EB7EC0012F3FF /* PreviewBrain.swift */; };
 		650F95EA281563C60012F3FF /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E9281563C60012F3FF /* DeviceModel.swift */; };
+		655199F0281D592900E14C47 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655199EF281D592900E14C47 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		650F95E4280EB7D60012F3FF /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		650F95E6280EB7EC0012F3FF /* PreviewBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewBrain.swift; sourceTree = "<group>"; };
 		650F95E9281563C60012F3FF /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		655199EF281D592900E14C47 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				650F95D1280EA7CF0012F3FF /* WallsCollectionViewController.swift */,
 				650F95CE280EA7920012F3FF /* WallCollectionViewCell.swift */,
 				650F95DC280EACB00012F3FF /* EditorViewController.swift */,
+				655199EF281D592900E14C47 /* InfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				650F95DF280EAFEC0012F3FF /* Shelf.swift in Sources */,
 				650F95BA280EA6D50012F3FF /* AppDelegate.swift in Sources */,
 				650F95D7280EA8E20012F3FF /* IScalable.swift in Sources */,
+				655199F0281D592900E14C47 /* InfoViewController.swift in Sources */,
 				650F95BC280EA6D50012F3FF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

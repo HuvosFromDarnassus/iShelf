@@ -12,6 +12,7 @@ class EditorViewController: UIViewController {
     @IBOutlet private weak var _shelvesImageView: UIImageView!
     @IBOutlet private weak var _previewImageView: UIImageView!
     @IBOutlet private weak var _successModalView: UIView!
+    @IBOutlet private weak var _tutorialOverlayView: UIView!
     @IBOutlet private var _buttons: [UIButton]?
     
     private let _segueId: String = "goToInfoVC"
@@ -26,12 +27,37 @@ class EditorViewController: UIViewController {
     
     private let previewBrain: PreviewBrain = PreviewBrain()
     
+    private var _isFirstLaunch: Bool {
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        
+        if launchedBefore {
+            return false
+        } else {
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            return true
+        }
+    }
+    
+    private var _infoShowTutorialSignal: Bool = false
+    
+    private var _needShowTutorialOverlay: Bool {
+        if _isFirstLaunch || _infoShowTutorialSignal {
+            return true
+        }
+        
+        return false
+    }
+    
     internal override func viewDidLoad() {
         super.viewDidLoad()
         
         changeWallImage()
         changeShelvesImage()
         
+        if _needShowTutorialOverlay {
+            showTutorialOverlay()
+        }
+
         setUpButtons(opacity: 0.8, offsetWidth: 3, offsetHeight: 3, radius: 4)
         setUpSuccessModalView(cornerRadius: 15, alpha: 0.7)
     }
@@ -41,6 +67,12 @@ class EditorViewController: UIViewController {
         changeShelfImageTransition(by: sender.direction)
         
         changeShelvesImage()
+    }
+    @IBAction func tutorialOverlayTaped(_ sender: UITapGestureRecognizer) {
+        if _infoShowTutorialSignal {
+            dismiss(animated: true)
+        }
+        _tutorialOverlayView.isHidden = true
     }
     @IBAction private func downloadButtonPressed(_ sender: UIButton) {
         ImageSaver.mergeImages(topImage: _shelvesImage!, backImage: _wallImage!)
@@ -122,6 +154,14 @@ class EditorViewController: UIViewController {
         _successModalView.alpha = alpha
     }
     
+    private func showTutorialOverlay() {
+        UIView.transition(with: _tutorialOverlayView,
+                          duration: 0.3,
+                          options: .transitionCurlDown,
+                          animations: { self._tutorialOverlayView.isHidden = false },
+                          completion: nil)
+    }
+    
     private func setUpButtons(opacity: Float, offsetWidth: CGFloat, offsetHeight: CGFloat, radius: CGFloat) {
         _buttons?.forEach({
             $0.layer.shadowOpacity = opacity
@@ -137,5 +177,11 @@ class EditorViewController: UIViewController {
     
     public func setWall(_ wall: Wall) {
         _wall = wall
+    }
+    
+    public func setInfoTutorialSignal(senderViewController: UIViewController) {
+        guard senderViewController.classForCoder == InfoViewController.classForCoder() else { return }
+        
+        _infoShowTutorialSignal = true
     }
 }

@@ -181,7 +181,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="yH6-sr-jin"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left or right" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="7c8-sj-VRD">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left or right" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="7c8-sj-VRD">
                                                 <rect key="frame" x="102.5" y="13.5" width="149.5" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -196,14 +196,34 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fLe-Kp-jrS">
+                                        <rect key="frame" x="100.5" y="770" width="213" height="81"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download your wallpaper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmV-wV-ONV">
+                                                <rect key="frame" x="0.0" y="0.0" width="213" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tap_down_icon" translatesAutoresizingMaskIntoConstraints="NO" id="LDM-1K-3rd">
+                                                <rect key="frame" x="81.5" y="31" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="7ri-V6-5LA"/>
+                                                    <constraint firstAttribute="height" constant="50" id="LPZ-0i-SVV"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="hme-c6-RVz" secondAttribute="trailing" constant="30" id="6cX-z6-LZi"/>
                                     <constraint firstItem="hme-c6-RVz" firstAttribute="leading" secondItem="haw-Pg-bfV" secondAttribute="leading" constant="30" id="MIf-lW-ONa"/>
+                                    <constraint firstItem="fLe-Kp-jrS" firstAttribute="centerX" secondItem="haw-Pg-bfV" secondAttribute="centerX" id="TDz-Pn-60j"/>
                                     <constraint firstItem="hme-c6-RVz" firstAttribute="centerX" secondItem="haw-Pg-bfV" secondAttribute="centerX" id="Yn0-c1-Ju2"/>
                                     <constraint firstItem="hme-c6-RVz" firstAttribute="centerY" secondItem="haw-Pg-bfV" secondAttribute="centerY" id="abo-3R-obQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="fLe-Kp-jrS" secondAttribute="bottom" constant="45" id="x40-53-RYz"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ARZ-P9-fAs" appends="YES" id="Cjw-FZ-7pi"/>
@@ -383,6 +403,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="8vu-Yh-hTa"/>
         <segue reference="d6t-re-wMe"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -395,6 +416,7 @@
         <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
         <image name="swipe_left_icon" width="170.5" height="170.5"/>
         <image name="swipe_right_icon" width="170.5" height="170.5"/>
+        <image name="tap_down_icon" width="170.5" height="170.5"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

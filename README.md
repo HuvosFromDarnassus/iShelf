@@ -1,4 +1,4 @@
-![Logo](iShelf/Assets.xcassets/appIcon.imageset/appIcon.png)
+![Logo](iShelf/Assets.xcassets/alternate_appIcon.imageset/alternate_appIcon.png)
 
 
 # iShelf
@@ -21,6 +21,7 @@ A simple wallpaper editor application for iPhone. Create your own wallpapers wit
 - Big collection of beautiful shelves
 - Elegant animations
 - Ability to view icons with wallpapers directly in the editor
+- Excellent device support (iPhone 6 to iPhone 13 Pro Max)
 
 
 ## ⚙️ Scheme

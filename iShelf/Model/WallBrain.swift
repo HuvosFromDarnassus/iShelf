@@ -5,9 +5,7 @@
 //  Created by Daniel Tvorun on 19.04.2022.
 //
 
-class WallBrain {
-    private let deviceManager = DeviceManager()
-    
+class WallBrain {    
     private let _walls: [Wall] = [
         Wall(imageName: "wall_1"),
         Wall(imageName: "wall_2"),

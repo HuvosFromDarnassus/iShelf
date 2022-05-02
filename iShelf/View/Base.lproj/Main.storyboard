@@ -403,6 +403,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="8vu-Yh-hTa"/>
         <segue reference="d6t-re-wMe"/>
     </inferredMetricsTieBreakers>
     <resources>

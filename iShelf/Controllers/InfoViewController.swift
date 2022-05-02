@@ -11,7 +11,7 @@ class InfoViewController: UIViewController {
     
     private let _segueId: String = "backToEditorVC"
     
-    @IBAction func shelvesTutorialButtonPressed(_ sender: UIButton) {
+    @IBAction private func shelvesTutorialButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: _segueId, sender: self)
     }
     

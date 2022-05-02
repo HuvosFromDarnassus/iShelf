@@ -58,8 +58,8 @@ class EditorViewController: UIViewController {
             showTutorialOverlay()
         }
 
-        setUpButtons(opacity: 0.8, offsetWidth: 3, offsetHeight: 3, radius: 4)
-        setUpSuccessModalView(cornerRadius: 15, alpha: 0.7)
+        setupButtons(opacity: 0.8, offsetWidth: 3, offsetHeight: 3, radius: 4)
+        setupSuccessModalView(cornerRadius: 15, alpha: 0.7)
     }
     
     @IBAction private func shelvesSwiped(_ sender: UISwipeGestureRecognizer) {
@@ -68,7 +68,7 @@ class EditorViewController: UIViewController {
         
         changeShelvesImage()
     }
-    @IBAction func tutorialOverlayTaped(_ sender: UITapGestureRecognizer) {
+    @IBAction private func tutorialOverlayTaped(_ sender: UITapGestureRecognizer) {
         if _infoShowTutorialSignal {
             dismiss(animated: true)
         }
@@ -149,11 +149,6 @@ class EditorViewController: UIViewController {
         }
     }
     
-    private func setUpSuccessModalView(cornerRadius: CGFloat, alpha: CGFloat) {
-        _successModalView.layer.cornerRadius = cornerRadius
-        _successModalView.alpha = alpha
-    }
-    
     private func showTutorialOverlay() {
         UIView.transition(with: _tutorialOverlayView,
                           duration: 0.3,
@@ -162,7 +157,17 @@ class EditorViewController: UIViewController {
                           completion: nil)
     }
     
-    private func setUpButtons(opacity: Float, offsetWidth: CGFloat, offsetHeight: CGFloat, radius: CGFloat) {
+    private func vibrateSuccess() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
+    }
+    
+    private func setupSuccessModalView(cornerRadius: CGFloat, alpha: CGFloat) {
+        _successModalView.layer.cornerRadius = cornerRadius
+        _successModalView.alpha = alpha
+    }
+    
+    private func setupButtons(opacity: Float, offsetWidth: CGFloat, offsetHeight: CGFloat, radius: CGFloat) {
         _buttons?.forEach({
             $0.layer.shadowOpacity = opacity
             $0.layer.shadowOffset = CGSize(width: offsetWidth, height: offsetHeight)
@@ -170,18 +175,13 @@ class EditorViewController: UIViewController {
         })
     }
     
-    private func vibrateSuccess() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
-    }
-    
-    public func setWall(_ wall: Wall) {
-        _wall = wall
-    }
-    
     public func setInfoTutorialSignal(senderViewController: UIViewController) {
         guard senderViewController.classForCoder == InfoViewController.classForCoder() else { return }
         
         _infoShowTutorialSignal = true
+    }
+    
+    public func setWall(_ wall: Wall) {
+        _wall = wall
     }
 }

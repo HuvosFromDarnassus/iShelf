@@ -9,9 +9,12 @@ import UIKit
 
 class InfoViewController: UIViewController {
     
+    private let soundsManager: SoundsManager = SoundsManager()
+    
     private let _segueId: String = "backToEditorVC"
     
     @IBAction private func shelvesTutorialButtonPressed(_ sender: UIButton) {
+        soundsManager.playSound(.click)
         performSegue(withIdentifier: _segueId, sender: self)
     }
     

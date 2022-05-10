@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class EditorViewController: UIViewController {
     @IBOutlet private weak var _wallImageView: UIImageView!
@@ -48,6 +49,8 @@ class EditorViewController: UIViewController {
         return false
     }
     
+    private let soundsManager: SoundsManager = SoundsManager()
+    
     internal override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,9 +69,13 @@ class EditorViewController: UIViewController {
         changeShelfIndex(by: sender.direction)
         changeShelfImageTransition(by: sender.direction)
         
+        soundsManager.playSound(.swipe)
+        
         changeShelvesImage()
     }
     @IBAction private func tutorialOverlayTaped(_ sender: UITapGestureRecognizer) {
+        soundsManager.playSound(.click)
+        
         if _infoShowTutorialSignal {
             dismiss(animated: true)
         }
@@ -83,6 +90,7 @@ class EditorViewController: UIViewController {
                           animations: { self._successModalView.isHidden = false },
                           completion: nil)
         
+        soundsManager.playSound(.success)
         vibrateSuccess()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -90,9 +98,12 @@ class EditorViewController: UIViewController {
         }
     }
     @IBAction private func backgroundsButtonPressed(_ sender: UIButton) {
+        soundsManager.playSound(.click)
         dismiss(animated: true)
     }
     @IBAction private func infoButtonPressed(_ sender: UIButton) {
+        soundsManager.playSound(.segue)
+        
         performSegue(withIdentifier: _segueId, sender: self)
     }
     @IBAction private func previewButtonPressed(_ sender: UIButton) {
@@ -108,6 +119,8 @@ class EditorViewController: UIViewController {
                           options: .transitionFlipFromBottom,
                           animations: { self._previewImageView.image = UIImage(named: preview.imageName) },
                           completion: nil)
+        
+        soundsManager.playSound(.preview)
     }
     
     private func changeWallImage() {

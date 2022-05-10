@@ -12,6 +12,7 @@ private let reuseIdentifier = "wallDataCell"
 class WallsCollectionViewController: UICollectionViewController {
     
     private let wallBrain: WallBrain = WallBrain()
+    private let soundsManager: SoundsManager = SoundsManager()
     
     private let _segueId: String = "goToEditorVC"
     
@@ -42,6 +43,7 @@ class WallsCollectionViewController: UICollectionViewController {
     }
     
     internal override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        soundsManager.playSound(.click)
         performSegue(withIdentifier: _segueId, sender: nil)
     }
     

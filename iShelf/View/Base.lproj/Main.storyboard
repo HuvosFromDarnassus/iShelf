@@ -403,8 +403,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8vu-Yh-hTa"/>
-        <segue reference="d6t-re-wMe"/>
+        <segue reference="Sa6-qh-f4c"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="alternate_appIcon" width="341" height="341"/>

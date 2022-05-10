@@ -26,6 +26,12 @@
 		650F95E7280EB7EC0012F3FF /* PreviewBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E6280EB7EC0012F3FF /* PreviewBrain.swift */; };
 		650F95EA281563C60012F3FF /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E9281563C60012F3FF /* DeviceModel.swift */; };
 		655199F0281D592900E14C47 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655199EF281D592900E14C47 /* InfoViewController.swift */; };
+		65DDA671282A8AB10031C21E /* SoundsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DDA670282A8AB10031C21E /* SoundsManager.swift */; };
+		65DDA684282A8EC30031C21E /* toggle_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65DDA67F282A8EC30031C21E /* toggle_sound.mp3 */; };
+		65DDA685282A8EC30031C21E /* click_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65DDA680282A8EC30031C21E /* click_sound.mp3 */; };
+		65DDA686282A8EC30031C21E /* segue_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65DDA681282A8EC30031C21E /* segue_sound.mp3 */; };
+		65DDA687282A8EC30031C21E /* swipe_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65DDA682282A8EC30031C21E /* swipe_sound.mp3 */; };
+		65DDA688282A8EC30031C21E /* success_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65DDA683282A8EC30031C21E /* success_sound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,12 @@
 		650F95E6280EB7EC0012F3FF /* PreviewBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewBrain.swift; sourceTree = "<group>"; };
 		650F95E9281563C60012F3FF /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 		655199EF281D592900E14C47 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		65DDA670282A8AB10031C21E /* SoundsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundsManager.swift; path = iShelf/SoundsManager.swift; sourceTree = SOURCE_ROOT; };
+		65DDA67F282A8EC30031C21E /* toggle_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = toggle_sound.mp3; sourceTree = "<group>"; };
+		65DDA680282A8EC30031C21E /* click_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click_sound.mp3; sourceTree = "<group>"; };
+		65DDA681282A8EC30031C21E /* segue_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = segue_sound.mp3; sourceTree = "<group>"; };
+		65DDA682282A8EC30031C21E /* swipe_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = swipe_sound.mp3; sourceTree = "<group>"; };
+		65DDA683282A8EC30031C21E /* success_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success_sound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,11 +100,13 @@
 				650F95DA280EA9400012F3FF /* DeviceManager.swift */,
 				650F95E2280EB2C30012F3FF /* ImageSaver.swift */,
 				650F95D6280EA8E20012F3FF /* IScalable.swift */,
+				65DDA670282A8AB10031C21E /* SoundsManager.swift */,
 				650F95D5280EA8C80012F3FF /* Model */,
 				650F95CD280EA7760012F3FF /* View */,
 				650F95D0280EA7980012F3FF /* Controllers */,
 				650F95C4280EA6D60012F3FF /* LaunchScreen.storyboard */,
 				650F95C2280EA6D60012F3FF /* Assets.xcassets */,
+				65DDA67E282A8EC30031C21E /* Sounds */,
 				650F95C7280EA6D60012F3FF /* Info.plist */,
 			);
 			path = iShelf;
@@ -128,6 +142,19 @@
 				650F95E4280EB7D60012F3FF /* Preview.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		65DDA67E282A8EC30031C21E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				65DDA67F282A8EC30031C21E /* toggle_sound.mp3 */,
+				65DDA680282A8EC30031C21E /* click_sound.mp3 */,
+				65DDA681282A8EC30031C21E /* segue_sound.mp3 */,
+				65DDA682282A8EC30031C21E /* swipe_sound.mp3 */,
+				65DDA683282A8EC30031C21E /* success_sound.mp3 */,
+			);
+			name = Sounds;
+			path = ../../../Desktop/Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,8 +215,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65DDA688282A8EC30031C21E /* success_sound.mp3 in Resources */,
+				65DDA685282A8EC30031C21E /* click_sound.mp3 in Resources */,
+				65DDA684282A8EC30031C21E /* toggle_sound.mp3 in Resources */,
 				650F95C6280EA6D60012F3FF /* LaunchScreen.storyboard in Resources */,
 				650F95C3280EA6D60012F3FF /* Assets.xcassets in Resources */,
+				65DDA686282A8EC30031C21E /* segue_sound.mp3 in Resources */,
+				65DDA687282A8EC30031C21E /* swipe_sound.mp3 in Resources */,
 				650F95C1280EA6D50012F3FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +245,7 @@
 				650F95E5280EB7D60012F3FF /* Preview.swift in Sources */,
 				650F95E3280EB2C30012F3FF /* ImageSaver.swift in Sources */,
 				650F95DF280EAFEC0012F3FF /* Shelf.swift in Sources */,
+				65DDA671282A8AB10031C21E /* SoundsManager.swift in Sources */,
 				650F95BA280EA6D50012F3FF /* AppDelegate.swift in Sources */,
 				650F95D7280EA8E20012F3FF /* IScalable.swift in Sources */,
 				655199F0281D592900E14C47 /* InfoViewController.swift in Sources */,
@@ -366,6 +399,7 @@
 				DEVELOPMENT_TEAM = 9D3QPUYX6Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iShelf/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "iShelf need access to Camera to create background image";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "iShelf need access to Photos to save wallpaper";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -396,6 +430,7 @@
 				DEVELOPMENT_TEAM = 9D3QPUYX6Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iShelf/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "iShelf need access to Camera to create background image";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "iShelf need access to Photos to save wallpaper";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

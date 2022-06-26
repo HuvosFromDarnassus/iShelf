@@ -31,4 +31,4 @@ A simple wallpaper editor application for iPhone. Create your own wallpapers wit
 
 - UIKit
 - Storyboard
-- MVC
+- MVP

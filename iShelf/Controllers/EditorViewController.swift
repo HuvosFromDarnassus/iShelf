@@ -16,8 +16,7 @@ class EditorViewController: UIViewController {
     @IBOutlet private weak var _tutorialOverlayView: UIView!
     @IBOutlet private var _buttons: [UIButton]?
     
-    private let _segueId: String = "goToInfoVC"
-    
+    // ==============================================
     private var _wall: Wall?
     private var _wallImage: UIImage?
     
@@ -29,12 +28,12 @@ class EditorViewController: UIViewController {
     private let previewBrain: PreviewBrain = PreviewBrain()
     
     private var _isFirstLaunch: Bool {
-        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        let launchedBefore = UserDefaults.standard.bool(forKey: Constants.Editor.launchedBefore)
         
         if launchedBefore {
             return false
         } else {
-            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            UserDefaults.standard.set(true, forKey: Constants.Editor.launchedBefore)
             return true
         }
     }
@@ -50,6 +49,7 @@ class EditorViewController: UIViewController {
     }
     
     private let soundsManager: SoundsManager = SoundsManager()
+    // ==============================================
     
     internal override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,11 +60,17 @@ class EditorViewController: UIViewController {
         if _needShowTutorialOverlay {
             showTutorialOverlay()
         }
-
+        
         setupButtons(opacity: 0.8, offsetWidth: 3, offsetHeight: 3, radius: 4)
         setupSuccessModalView(cornerRadius: 15, alpha: 0.7)
     }
+    // ==============================================
+    public func setWall(_ wall: Wall) {
+        _wall = wall
+    }
+    // ==============================================
     
+    // MARK: - IBActions
     @IBAction private func shelvesSwiped(_ sender: UISwipeGestureRecognizer) {
         changeShelfIndex(by: sender.direction)
         changeShelfImageTransition(by: sender.direction)
@@ -91,7 +97,7 @@ class EditorViewController: UIViewController {
                           completion: nil)
         
         soundsManager.playSound(.success)
-        vibrateSuccess()
+        soundsManager.vibrate()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self._successModalView.isHidden = true
@@ -104,7 +110,7 @@ class EditorViewController: UIViewController {
     @IBAction private func infoButtonPressed(_ sender: UIButton) {
         soundsManager.playSound(.segue)
         
-        performSegue(withIdentifier: _segueId, sender: self)
+        performSegue(withIdentifier: Constants.Editor.editorSegue, sender: self)
     }
     @IBAction private func previewButtonPressed(_ sender: UIButton) {
         _previewImageView.isHidden = !_previewImageView.isHidden
@@ -113,7 +119,7 @@ class EditorViewController: UIViewController {
         sender.setTitleColor(.cyan, for: .selected)
         
         let preview = previewBrain.getPreview(by: 0)
-
+        
         UIView.transition(with: _previewImageView,
                           duration: 0.2,
                           options: .transitionFlipFromBottom,
@@ -123,8 +129,10 @@ class EditorViewController: UIViewController {
         soundsManager.playSound(.preview)
     }
     
+    // ==============================================
+    // MARK: - Change IBOutlets
     private func changeWallImage() {
-        _wallImage = UIImage(named: _wall?.imageName ?? WallsCollectionViewController.wallDefaultImageName)
+        _wallImage = UIImage(named: _wall?.imageName ?? Constants.WallsCollection.wallDefaultImageName)
         _wallImageView.image = _wallImage
     }
     
@@ -162,19 +170,8 @@ class EditorViewController: UIViewController {
         }
     }
     
-    private func showTutorialOverlay() {
-        UIView.transition(with: _tutorialOverlayView,
-                          duration: 0.3,
-                          options: .transitionCurlDown,
-                          animations: { self._tutorialOverlayView.isHidden = false },
-                          completion: nil)
-    }
     
-    private func vibrateSuccess() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
-    }
-    
+    // MARK: - Setuping
     private func setupSuccessModalView(cornerRadius: CGFloat, alpha: CGFloat) {
         _successModalView.layer.cornerRadius = cornerRadius
         _successModalView.alpha = alpha
@@ -188,13 +185,19 @@ class EditorViewController: UIViewController {
         })
     }
     
+    
+    // MARK: - Tutorial overlay
+    private func showTutorialOverlay() {
+        UIView.transition(with: _tutorialOverlayView,
+                          duration: 0.3,
+                          options: .transitionCurlDown,
+                          animations: { self._tutorialOverlayView.isHidden = false },
+                          completion: nil)
+    }
+    // ==============================================
     public func setInfoTutorialSignal(senderViewController: UIViewController) {
         guard senderViewController.classForCoder == InfoViewController.classForCoder() else { return }
         
         _infoShowTutorialSignal = true
-    }
-    
-    public func setWall(_ wall: Wall) {
-        _wall = wall
     }
 }

@@ -7,16 +7,10 @@
 
 import UIKit
 
-private let reuseIdentifier = "wallDataCell"
-
 class WallsCollectionViewController: UICollectionViewController {
     
     private let wallBrain: WallBrain = WallBrain()
     private let soundsManager: SoundsManager = SoundsManager()
-    
-    private let _segueId: String = "goToEditorVC"
-    
-    public static let wallDefaultImageName: String = "wall_1"
     
     internal override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +27,7 @@ class WallsCollectionViewController: UICollectionViewController {
     }
     
     internal override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WallCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.WallsCollection.wallReusableIdentifier, for: indexPath) as! WallCollectionViewCell
         
         let wall = wallBrain.getWall(by: indexPath.row)
         
@@ -44,11 +38,11 @@ class WallsCollectionViewController: UICollectionViewController {
     
     internal override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         soundsManager.playSound(.click)
-        performSegue(withIdentifier: _segueId, sender: nil)
+        performSegue(withIdentifier: Constants.WallsCollection.wallCollectionSegue, sender: nil)
     }
     
     internal override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == _segueId {
+        if segue.identifier == Constants.WallsCollection.wallCollectionSegue {
             if let indexPaths = collectionView.indexPathsForSelectedItems {
                 let destination = segue.destination as! EditorViewController
                 

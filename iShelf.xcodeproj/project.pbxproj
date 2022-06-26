@@ -26,12 +26,13 @@
 		650F95E7280EB7EC0012F3FF /* PreviewBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E6280EB7EC0012F3FF /* PreviewBrain.swift */; };
 		650F95EA281563C60012F3FF /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F95E9281563C60012F3FF /* DeviceModel.swift */; };
 		655199F0281D592900E14C47 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655199EF281D592900E14C47 /* InfoViewController.swift */; };
+		658B861928467BE100D9DA3D /* click_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 658B861428467BE100D9DA3D /* click_sound.mp3 */; };
+		658B861A28467BE100D9DA3D /* toggle_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 658B861528467BE100D9DA3D /* toggle_sound.mp3 */; };
+		658B861B28467BE100D9DA3D /* segue_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 658B861628467BE100D9DA3D /* segue_sound.mp3 */; };
+		658B861C28467BE100D9DA3D /* success_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 658B861728467BE100D9DA3D /* success_sound.mp3 */; };
+		658B861D28467BE100D9DA3D /* swipe_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 658B861828467BE100D9DA3D /* swipe_sound.mp3 */; };
 		65DDA671282A8AB10031C21E /* SoundsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DDA670282A8AB10031C21E /* SoundsManager.swift */; };
-		65DDA684282A8EC30031C21E /* toggle_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65DDA67F282A8EC30031C21E /* toggle_sound.mp3 */; };
-		65DDA685282A8EC30031C21E /* click_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65DDA680282A8EC30031C21E /* click_sound.mp3 */; };
-		65DDA686282A8EC30031C21E /* segue_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65DDA681282A8EC30031C21E /* segue_sound.mp3 */; };
-		65DDA687282A8EC30031C21E /* swipe_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65DDA682282A8EC30031C21E /* swipe_sound.mp3 */; };
-		65DDA688282A8EC30031C21E /* success_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65DDA683282A8EC30031C21E /* success_sound.mp3 */; };
+		65E356372868821800BD0FDA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E356362868821800BD0FDA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,12 +57,13 @@
 		650F95E6280EB7EC0012F3FF /* PreviewBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewBrain.swift; sourceTree = "<group>"; };
 		650F95E9281563C60012F3FF /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 		655199EF281D592900E14C47 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		658B861428467BE100D9DA3D /* click_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = click_sound.mp3; path = Sounds/click_sound.mp3; sourceTree = SOURCE_ROOT; };
+		658B861528467BE100D9DA3D /* toggle_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = toggle_sound.mp3; path = Sounds/toggle_sound.mp3; sourceTree = SOURCE_ROOT; };
+		658B861628467BE100D9DA3D /* segue_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = segue_sound.mp3; path = Sounds/segue_sound.mp3; sourceTree = SOURCE_ROOT; };
+		658B861728467BE100D9DA3D /* success_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = success_sound.mp3; path = Sounds/success_sound.mp3; sourceTree = SOURCE_ROOT; };
+		658B861828467BE100D9DA3D /* swipe_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = swipe_sound.mp3; path = Sounds/swipe_sound.mp3; sourceTree = SOURCE_ROOT; };
 		65DDA670282A8AB10031C21E /* SoundsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SoundsManager.swift; path = iShelf/SoundsManager.swift; sourceTree = SOURCE_ROOT; };
-		65DDA67F282A8EC30031C21E /* toggle_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = toggle_sound.mp3; sourceTree = "<group>"; };
-		65DDA680282A8EC30031C21E /* click_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click_sound.mp3; sourceTree = "<group>"; };
-		65DDA681282A8EC30031C21E /* segue_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = segue_sound.mp3; sourceTree = "<group>"; };
-		65DDA682282A8EC30031C21E /* swipe_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = swipe_sound.mp3; sourceTree = "<group>"; };
-		65DDA683282A8EC30031C21E /* success_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success_sound.mp3; sourceTree = "<group>"; };
+		65E356362868821800BD0FDA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				650F95B9280EA6D50012F3FF /* AppDelegate.swift */,
 				650F95BB280EA6D50012F3FF /* SceneDelegate.swift */,
+				65E356362868821800BD0FDA /* Constants.swift */,
 				650F95E9281563C60012F3FF /* DeviceModel.swift */,
 				650F95DA280EA9400012F3FF /* DeviceManager.swift */,
 				650F95E2280EB2C30012F3FF /* ImageSaver.swift */,
@@ -104,8 +107,8 @@
 				650F95D5280EA8C80012F3FF /* Model */,
 				650F95CD280EA7760012F3FF /* View */,
 				650F95D0280EA7980012F3FF /* Controllers */,
-				650F95C4280EA6D60012F3FF /* LaunchScreen.storyboard */,
 				650F95C2280EA6D60012F3FF /* Assets.xcassets */,
+				650F95C4280EA6D60012F3FF /* LaunchScreen.storyboard */,
 				65DDA67E282A8EC30031C21E /* Sounds */,
 				650F95C7280EA6D60012F3FF /* Info.plist */,
 			);
@@ -147,11 +150,11 @@
 		65DDA67E282A8EC30031C21E /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				65DDA67F282A8EC30031C21E /* toggle_sound.mp3 */,
-				65DDA680282A8EC30031C21E /* click_sound.mp3 */,
-				65DDA681282A8EC30031C21E /* segue_sound.mp3 */,
-				65DDA682282A8EC30031C21E /* swipe_sound.mp3 */,
-				65DDA683282A8EC30031C21E /* success_sound.mp3 */,
+				658B861428467BE100D9DA3D /* click_sound.mp3 */,
+				658B861628467BE100D9DA3D /* segue_sound.mp3 */,
+				658B861728467BE100D9DA3D /* success_sound.mp3 */,
+				658B861828467BE100D9DA3D /* swipe_sound.mp3 */,
+				658B861528467BE100D9DA3D /* toggle_sound.mp3 */,
 			);
 			name = Sounds;
 			path = ../../../Desktop/Sounds;
@@ -215,14 +218,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65DDA688282A8EC30031C21E /* success_sound.mp3 in Resources */,
-				65DDA685282A8EC30031C21E /* click_sound.mp3 in Resources */,
-				65DDA684282A8EC30031C21E /* toggle_sound.mp3 in Resources */,
+				658B861A28467BE100D9DA3D /* toggle_sound.mp3 in Resources */,
 				650F95C6280EA6D60012F3FF /* LaunchScreen.storyboard in Resources */,
 				650F95C3280EA6D60012F3FF /* Assets.xcassets in Resources */,
-				65DDA686282A8EC30031C21E /* segue_sound.mp3 in Resources */,
-				65DDA687282A8EC30031C21E /* swipe_sound.mp3 in Resources */,
 				650F95C1280EA6D50012F3FF /* Main.storyboard in Resources */,
+				658B861C28467BE100D9DA3D /* success_sound.mp3 in Resources */,
+				658B861D28467BE100D9DA3D /* swipe_sound.mp3 in Resources */,
+				658B861B28467BE100D9DA3D /* segue_sound.mp3 in Resources */,
+				658B861928467BE100D9DA3D /* click_sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +253,7 @@
 				650F95D7280EA8E20012F3FF /* IScalable.swift in Sources */,
 				655199F0281D592900E14C47 /* InfoViewController.swift in Sources */,
 				650F95BC280EA6D50012F3FF /* SceneDelegate.swift in Sources */,
+				65E356372868821800BD0FDA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

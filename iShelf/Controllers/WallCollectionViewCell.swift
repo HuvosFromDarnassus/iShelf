@@ -12,7 +12,7 @@ class WallCollectionViewCell: UICollectionViewCell {
     
     public func setImage(_ image: UIImage?) {
         guard let unwrappedImage = image else {
-            _wallImageView.image = UIImage(named: WallsCollectionViewController.wallDefaultImageName)
+            _wallImageView.image = UIImage(named: Constants.WallsCollection.wallDefaultImageName)
             return
         }
         

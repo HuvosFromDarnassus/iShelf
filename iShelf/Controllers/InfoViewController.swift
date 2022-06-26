@@ -11,15 +11,13 @@ class InfoViewController: UIViewController {
     
     private let soundsManager: SoundsManager = SoundsManager()
     
-    private let _segueId: String = "backToEditorVC"
-    
     @IBAction private func shelvesTutorialButtonPressed(_ sender: UIButton) {
         soundsManager.playSound(.click)
-        performSegue(withIdentifier: _segueId, sender: self)
+        performSegue(withIdentifier: Constants.Info.infoSegue, sender: self)
     }
     
     internal override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == _segueId {
+        if segue.identifier == Constants.Info.infoSegue {
             let destination = segue.destination as! EditorViewController
             
             destination.setInfoTutorialSignal(senderViewController: self)

@@ -27,8 +27,8 @@ class PreviewBrain {
         sortPreviewsForDevice()
     }
     
-    public func getPreview(by index: Int) -> Preview {
-        return _previewsForDevice[index]
+    public func getPreviews() -> [Preview] {
+        return _previewsForDevice
     }
     
     private func sortPreviewsForDevice() {

@@ -16,16 +16,20 @@ class EditorViewController: UIViewController {
     @IBOutlet private weak var _tutorialOverlayView: UIView!
     @IBOutlet private var _buttons: [UIButton]?
     
-    // ==============================================
+    private let presenter: EditorPresenter = EditorPresenter()
+    private let soundsManager: SoundsManager = SoundsManager()
+    
+    weak private var viewOutputDelegate: EditorViewOutputDelegate?
+    
+    private var shelves: [Shelf] = []
+    private var previews: [Preview] = []
+    
     private var _wall: Wall?
     private var _wallImage: UIImage?
     
-    private let shelfBrain: ShelfBrain = ShelfBrain()
     private var _shelfIndex: Int = 0
     private var _shelvesImage: UIImage?
     private var _shelvesImageTransition: UIView.AnimationOptions = .transitionFlipFromRight
-    
-    private let previewBrain: PreviewBrain = PreviewBrain()
     
     private var _isFirstLaunch: Bool {
         let launchedBefore = UserDefaults.standard.bool(forKey: Constants.Editor.launchedBefore)
@@ -44,33 +48,29 @@ class EditorViewController: UIViewController {
         if _isFirstLaunch || _infoShowTutorialSignal {
             return true
         }
-        
         return false
     }
-    
-    private let soundsManager: SoundsManager = SoundsManager()
-    // ==============================================
     
     internal override func viewDidLoad() {
         super.viewDidLoad()
         
-        changeWallImage()
-        changeShelvesImage()
+        presenter.setViewInputDelegate(delegate: self)
+        viewOutputDelegate = presenter
+        viewOutputDelegate?.getData()
         
         if _needShowTutorialOverlay {
             showTutorialOverlay()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        changeWallImage()
+        changeShelvesImage()
         
         setupButtons(opacity: 0.8, offsetWidth: 3, offsetHeight: 3, radius: 4)
         setupSuccessModalView(cornerRadius: 15, alpha: 0.7)
     }
-    // ==============================================
-    public func setWall(_ wall: Wall) {
-        _wall = wall
-    }
-    // ==============================================
     
-    // MARK: - IBActions
     @IBAction private func shelvesSwiped(_ sender: UISwipeGestureRecognizer) {
         changeShelfIndex(by: sender.direction)
         changeShelfImageTransition(by: sender.direction)
@@ -79,6 +79,7 @@ class EditorViewController: UIViewController {
         
         changeShelvesImage()
     }
+    
     @IBAction private func tutorialOverlayTaped(_ sender: UITapGestureRecognizer) {
         soundsManager.playSound(.click)
         
@@ -87,6 +88,7 @@ class EditorViewController: UIViewController {
         }
         _tutorialOverlayView.isHidden = true
     }
+    
     @IBAction private func downloadButtonPressed(_ sender: UIButton) {
         ImageSaver.mergeImages(topImage: _shelvesImage!, backImage: _wallImage!)
         
@@ -103,22 +105,25 @@ class EditorViewController: UIViewController {
             self._successModalView.isHidden = true
         }
     }
+    
     @IBAction private func backgroundsButtonPressed(_ sender: UIButton) {
         soundsManager.playSound(.click)
         dismiss(animated: true)
     }
+    
     @IBAction private func infoButtonPressed(_ sender: UIButton) {
         soundsManager.playSound(.segue)
         
         performSegue(withIdentifier: Constants.Editor.editorSegue, sender: self)
     }
+    
     @IBAction private func previewButtonPressed(_ sender: UIButton) {
+        let preview = previews[0]
+        
         _previewImageView.isHidden = !_previewImageView.isHidden
         
         sender.isSelected = !_previewImageView.isHidden
         sender.setTitleColor(.cyan, for: .selected)
-        
-        let preview = previewBrain.getPreview(by: 0)
         
         UIView.transition(with: _previewImageView,
                           duration: 0.2,
@@ -129,15 +134,13 @@ class EditorViewController: UIViewController {
         soundsManager.playSound(.preview)
     }
     
-    // ==============================================
-    // MARK: - Change IBOutlets
     private func changeWallImage() {
         _wallImage = UIImage(named: _wall?.imageName ?? Constants.WallsCollection.wallDefaultImageName)
         _wallImageView.image = _wallImage
     }
     
     private func changeShelvesImage() {
-        let shelf = shelfBrain.getShelf(by: _shelfIndex)
+        let shelf = shelves[_shelfIndex]
         _shelvesImage = UIImage(named: shelf.imageName)
         
         UIView.transition(with: _shelvesImageView,
@@ -148,17 +151,14 @@ class EditorViewController: UIViewController {
     }
     
     private func changeShelfIndex(by direction:  UISwipeGestureRecognizer.Direction) {
-        switch direction {
-        case .left:
-            if _shelfIndex < shelfBrain.getShelvesCount() - 1 {
+        if direction == .left {
+            if _shelfIndex < shelves.count - 1 {
                 _shelfIndex += 1
             }
-        case .right:
+        } else if direction == .right {
             if _shelfIndex > 0 {
                 _shelfIndex -= 1
             }
-        default:
-            _shelfIndex = 0
         }
     }
     
@@ -170,8 +170,6 @@ class EditorViewController: UIViewController {
         }
     }
     
-    
-    // MARK: - Setuping
     private func setupSuccessModalView(cornerRadius: CGFloat, alpha: CGFloat) {
         _successModalView.layer.cornerRadius = cornerRadius
         _successModalView.alpha = alpha
@@ -185,8 +183,6 @@ class EditorViewController: UIViewController {
         })
     }
     
-    
-    // MARK: - Tutorial overlay
     private func showTutorialOverlay() {
         UIView.transition(with: _tutorialOverlayView,
                           duration: 0.3,
@@ -194,10 +190,25 @@ class EditorViewController: UIViewController {
                           animations: { self._tutorialOverlayView.isHidden = false },
                           completion: nil)
     }
-    // ==============================================
+    
     public func setInfoTutorialSignal(senderViewController: UIViewController) {
         guard senderViewController.classForCoder == InfoViewController.classForCoder() else { return }
         
         _infoShowTutorialSignal = true
+    }
+    
+    public func setWall(_ wall: Wall) {
+        _wall = wall
+    }
+}
+
+// MARK: - EditorViewInputDelegate
+extension EditorViewController: EditorViewInputDelegate {
+    func setupShelves(with shelves: [Shelf]) {
+        self.shelves = shelves
+    }
+    
+    func setupPreviews(with previews: [Preview]) {
+        self.previews = previews
     }
 }

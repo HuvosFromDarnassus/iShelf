@@ -66,8 +66,8 @@ class ShelfBrain {
         sortShelvesForDevice()
     }
     
-    public func getShelf(by index: Int) -> Shelf {
-        return _shelvesForDevice[index]
+    public func getShelves() -> [Shelf] {
+        return _shelvesForDevice
     }
     
     public func getShelvesCount() -> Int {

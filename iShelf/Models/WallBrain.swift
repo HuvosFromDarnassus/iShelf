@@ -16,8 +16,8 @@ class WallBrain {
         Wall(imageName: "wall_7"),
     ]
     
-    public func getWall(by index: Int) -> Wall {
-        return _walls[index]
+    public func getWalls() -> [Wall] {
+        return _walls
     }
     
     public func getWallsCount() -> Int {

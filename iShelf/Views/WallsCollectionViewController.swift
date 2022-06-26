@@ -9,11 +9,19 @@ import UIKit
 
 class WallsCollectionViewController: UICollectionViewController {
     
-    private let wallBrain: WallBrain = WallBrain()
+    private let presentor: WallsPresenter = WallsPresenter()
     private let soundsManager: SoundsManager = SoundsManager()
+    
+    private var viewOutputDelegate: WallsViewOutputDelegate?
+    
+    private var walls: [Wall] = []
     
     internal override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presentor.setViewInputDelegate(delegate: self)
+        viewOutputDelegate = presentor
+        viewOutputDelegate?.getData()
         
         setupCollectionCellSize(itemsPerRow: 3, cellHeight: 300)
     }
@@ -23,13 +31,13 @@ class WallsCollectionViewController: UICollectionViewController {
     }
     
     internal override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return wallBrain.getWallsCount()
+        return walls.count
     }
     
     internal override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.WallsCollection.wallReusableIdentifier, for: indexPath) as! WallCollectionViewCell
         
-        let wall = wallBrain.getWall(by: indexPath.row)
+        let wall = walls[indexPath.row]
         
         cell.setImage(UIImage(named: wall.imageName))
         
@@ -46,7 +54,7 @@ class WallsCollectionViewController: UICollectionViewController {
             if let indexPaths = collectionView.indexPathsForSelectedItems {
                 let destination = segue.destination as! EditorViewController
                 
-                let wall = wallBrain.getWall(by: indexPaths[0].row)
+                let wall = walls[indexPaths[0].row]
                 
                 destination.setWall(wall)
                 collectionView.deselectItem(at: indexPaths[0], animated: false)
@@ -67,5 +75,12 @@ class WallsCollectionViewController: UICollectionViewController {
         layout.minimumLineSpacing = 1
         
         self.collectionView.collectionViewLayout = layout
+    }
+}
+
+// MARK: - WallsViewInputDelegate
+extension WallsCollectionViewController: WallsViewInputDelegate {
+    func setupData(with walls: [Wall]) {
+        self.walls = walls
     }
 }

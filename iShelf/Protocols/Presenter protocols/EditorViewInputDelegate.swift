@@ -6,6 +6,6 @@
 //
 
 protocol EditorViewInputDelegate: AnyObject {
-    func setupShelves(with shelves: [Shelf])
-    func setupPreviews(with previews: [Preview])
+    func setupShelves(with shelves: [IScalable])
+    func setupPreviews(with previews: [IScalable])
 }

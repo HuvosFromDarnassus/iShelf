@@ -7,9 +7,7 @@
 
 import UIKit
 
-class ShelfBrain {
-    private let deviceManager = DeviceManager()
-    
+class ShelfBrain: ModelBrain {
     private let _shelves: [Shelf] = [
         Shelf(imageName: "s0_shelf_1", devices: DeviceManager.sizeClass.size0),
         Shelf(imageName: "s0_shelf_2", devices: DeviceManager.sizeClass.size0),
@@ -60,27 +58,12 @@ class ShelfBrain {
         Shelf(imageName: "s7_shelf_5", devices: DeviceManager.sizeClass.size7)
     ]
     
-    private var _shelvesForDevice: [Shelf] = []
-    
-    public init() {
-        sortShelvesForDevice()
-    }
-    
-    public func getShelves() -> [Shelf] {
-        return _shelvesForDevice
+    public override init() {
+        super.init()
+        sortDataForDevice(using: _shelves)
     }
     
     public func getShelvesCount() -> Int {
-        return _shelvesForDevice.count
-    }
-    
-    private func sortShelvesForDevice() {
-        for _shelf in _shelves {
-            for device in _shelf.devices {
-                if device == deviceManager.type {
-                    _shelvesForDevice.append(_shelf)
-                }
-            }
-        }
+        return dataForDevice.count
     }
 }

@@ -12,30 +12,32 @@ class EditorPresenter {
     private let shelfBrain: ShelfBrain = ShelfBrain()
     private let previewBrain: PreviewBrain = PreviewBrain()
     
-    private var shelvesData: [Shelf]?
-    private var previewsData: [Preview]?
+    private var shelvesData: [IScalable]?
+    private var previewsData: [IScalable]?
     
     public func setViewInputDelegate(delegate: EditorViewInputDelegate) {
         viewInputDelegate = delegate
     }
-    
-    private func fillData() {
-        shelvesData = shelfBrain.getShelves()
-        previewsData = previewBrain.getPreviews()
+}
+
+// MARK: - PresenterProtocol
+extension EditorPresenter: PresenterProtocol {
+    internal func fillData() {
+        shelvesData = shelfBrain.getData()
+        previewsData = previewBrain.getData()
     }
     
-    private func loadData() {
+    internal func loadData() {
         if let shelves = shelvesData, let previews = previewsData {
             viewInputDelegate?.setupShelves(with: shelves)
             viewInputDelegate?.setupPreviews(with: previews)
         }
     }
-    
 }
 
 // MARK: - EditorViewOutputDelegate
 extension EditorPresenter: EditorViewOutputDelegate {
-    func getData() {
+    internal func getData() {
         fillData()
         loadData()
     }

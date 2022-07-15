@@ -19,8 +19,10 @@ class WallBrain {
     public func getWalls() -> [Wall] {
         return _walls
     }
-    
-    public func getWallsCount() -> Int {
+}
+
+extension WallBrain: GetDataCountProtocol {
+    func getDataCount() -> Int {
         return _walls.count
     }
 }

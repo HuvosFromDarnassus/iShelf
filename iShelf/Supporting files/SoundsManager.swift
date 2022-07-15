@@ -13,21 +13,23 @@
 import UIKit
 import AVFoundation
 
+enum Sounds {
+    case click
+    case swipe
+    case segue
+    case success
+    case preview
+}
+
 class SoundsManager {
     private var audioPlayer: AVAudioPlayer!
     
-    public enum sounds {
-        case click
-        case swipe
-        case segue
-        case success
-        case preview
-    }
-    
-    public func playSound(_ sound: sounds) {
-        let url = Bundle.main.url(forResource: defineResource(from: sound), withExtension: Constants.SoundsManager.fileType)
+    public func playSound(_ sound: Sounds) {
+        guard let url = Bundle.main.url(forResource: defineResource(from: sound), withExtension: Constants.SoundsManager.fileType) else {
+            return
+        }
         
-        audioPlayer = try! AVAudioPlayer(contentsOf: url!)
+        audioPlayer = try! AVAudioPlayer(contentsOf: url)
         audioPlayer.play()
     }
     
@@ -36,7 +38,7 @@ class SoundsManager {
         generator.notificationOccurred(.success)
     }
     
-    private func defineResource(from sound: sounds) -> String {
+    private func defineResource(from sound: Sounds) -> String {
         switch sound {
         case .click:
             return Constants.SoundsManager.click

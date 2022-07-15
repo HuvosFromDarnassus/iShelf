@@ -16,12 +16,15 @@ class WallsPresenter {
     public func setViewInputDelegate(delegate: WallsViewInputDelegate) {
         viewInputDelegate = delegate
     }
-    
-    private func fillData() {
+}
+
+// MARK: - PresenterProtocol
+extension WallsPresenter: PresenterProtocol {
+    internal func fillData() {
         wallsData = wallBrain.getWalls()
     }
     
-    private func loadData() {
+    internal func loadData() {
         if let walls = wallsData {
             viewInputDelegate?.setupData(with: walls)
         }
@@ -30,7 +33,7 @@ class WallsPresenter {
 
 // MARK: - WallsViewOutputDelegate
 extension WallsPresenter: WallsViewOutputDelegate {
-    func getData() {
+    internal func getData() {
         fillData()
         loadData()
     }

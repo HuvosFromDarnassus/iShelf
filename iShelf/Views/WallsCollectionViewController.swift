@@ -12,18 +12,20 @@ class WallsCollectionViewController: UICollectionViewController {
     private let presentor: WallsPresenter = WallsPresenter()
     private let soundsManager: SoundsManager = SoundsManager()
     
-    private var viewOutputDelegate: WallsViewOutputDelegate?
+    private weak var viewOutputDelegate: WallsViewOutputDelegate?
     
     private var walls: [Wall] = []
     
     internal override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupPresentor()
+        setupCollectionCellSize(itemsPerRow: 3, cellHeight: 300)
+    }
+    
+    private func setupPresentor() {
         presentor.setViewInputDelegate(delegate: self)
         viewOutputDelegate = presentor
         viewOutputDelegate?.getData()
-        
-        setupCollectionCellSize(itemsPerRow: 3, cellHeight: 300)
     }
     
     internal override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -38,7 +40,6 @@ class WallsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.WallsCollection.wallReusableIdentifier, for: indexPath) as! WallCollectionViewCell
         
         let wall = walls[indexPath.row]
-        
         cell.setImage(UIImage(named: wall.imageName))
         
         return cell
@@ -54,33 +55,39 @@ class WallsCollectionViewController: UICollectionViewController {
             if let indexPaths = collectionView.indexPathsForSelectedItems {
                 let destination = segue.destination as! EditorViewController
                 
-                let wall = walls[indexPaths[0].row]
+                sendSelectedWall(to: destination, using: indexPaths)
                 
-                destination.setWall(wall)
                 collectionView.deselectItem(at: indexPaths[0], animated: false)
             }
         }
     }
     
+    private func sendSelectedWall(to destination: EditorViewController, using indexPaths: [IndexPath]) {
+        let wall = walls[indexPaths[0].row]
+        destination.setWall(wall)
+    }
+    
     private func setupCollectionCellSize(itemsPerRow: Int, cellHeight: Int) {
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        
-        layout.sectionInset = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
-        
+        var layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let screenSize = UIScreen.main.bounds
+        let itemSize = CGSize(width: Int(screenSize.width) / itemsPerRow - 1, height: cellHeight)
         
-        layout.itemSize = CGSize(width: Int(screenSize.width) / itemsPerRow - 1, height: cellHeight)
-        
-        layout.minimumInteritemSpacing = 1
-        layout.minimumLineSpacing = 1
+        setupCellLayout(using: &layout, itemSize)
         
         self.collectionView.collectionViewLayout = layout
+    }
+    
+    private func setupCellLayout(using layout: inout UICollectionViewFlowLayout, _ itemSize: CGSize) {
+        layout.itemSize = itemSize
+        layout.sectionInset = UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
+        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 1
     }
 }
 
 // MARK: - WallsViewInputDelegate
 extension WallsCollectionViewController: WallsViewInputDelegate {
-    func setupData(with walls: [Wall]) {
+    internal func setupData(with walls: [Wall]) {
         self.walls = walls
     }
 }

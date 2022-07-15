@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 
 class EditorViewController: UIViewController {
+    
     @IBOutlet private weak var _wallImageView: UIImageView!
     @IBOutlet private weak var _shelvesImageView: UIImageView!
     @IBOutlet private weak var _previewImageView: UIImageView!
@@ -19,10 +20,10 @@ class EditorViewController: UIViewController {
     private let presenter: EditorPresenter = EditorPresenter()
     private let soundsManager: SoundsManager = SoundsManager()
     
-    weak private var viewOutputDelegate: EditorViewOutputDelegate?
+    private weak var viewOutputDelegate: EditorViewOutputDelegate?
     
-    private var shelves: [Shelf] = []
-    private var previews: [Preview] = []
+    private var shelves: [IScalable] = []
+    private var previews: [IScalable] = []
     
     private var _wall: Wall?
     private var _wallImage: UIImage?
@@ -45,18 +46,13 @@ class EditorViewController: UIViewController {
     private var _infoShowTutorialSignal: Bool = false
     
     private var _needShowTutorialOverlay: Bool {
-        if _isFirstLaunch || _infoShowTutorialSignal {
-            return true
-        }
-        return false
+        return _isFirstLaunch || _infoShowTutorialSignal
     }
     
     internal override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.setViewInputDelegate(delegate: self)
-        viewOutputDelegate = presenter
-        viewOutputDelegate?.getData()
+        setupPresentor()
         
         if _needShowTutorialOverlay {
             showTutorialOverlay()
@@ -74,10 +70,8 @@ class EditorViewController: UIViewController {
     @IBAction private func shelvesSwiped(_ sender: UISwipeGestureRecognizer) {
         changeShelfIndex(by: sender.direction)
         changeShelfImageTransition(by: sender.direction)
-        
-        soundsManager.playSound(.swipe)
-        
         changeShelvesImage()
+        soundsManager.playSound(.swipe)
     }
     
     @IBAction private func tutorialOverlayTaped(_ sender: UITapGestureRecognizer) {
@@ -92,18 +86,12 @@ class EditorViewController: UIViewController {
     @IBAction private func downloadButtonPressed(_ sender: UIButton) {
         ImageSaver.mergeImages(topImage: _shelvesImage!, backImage: _wallImage!)
         
-        UIView.transition(with: _successModalView,
-                          duration: 0.3,
-                          options: .transitionFlipFromBottom,
-                          animations: { self._successModalView.isHidden = false },
-                          completion: nil)
+        showSuccessModal()
         
         soundsManager.playSound(.success)
         soundsManager.vibrate()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self._successModalView.isHidden = true
-        }
+        hideSuccessModalWithInterval()
     }
     
     @IBAction private func backgroundsButtonPressed(_ sender: UIButton) {
@@ -113,25 +101,49 @@ class EditorViewController: UIViewController {
     
     @IBAction private func infoButtonPressed(_ sender: UIButton) {
         soundsManager.playSound(.segue)
-        
         performSegue(withIdentifier: Constants.Editor.editorSegue, sender: self)
     }
     
     @IBAction private func previewButtonPressed(_ sender: UIButton) {
-        let preview = previews[0]
-        
-        _previewImageView.isHidden = !_previewImageView.isHidden
-        
+        showPreview()
+        highlightButton(by: sender)
+        soundsManager.playSound(.preview)
+    }
+    
+    private func showSuccessModal() {
+        UIView.transition(with: _successModalView,
+                          duration: 0.3,
+                          options: .transitionFlipFromBottom,
+                          animations: { self._successModalView.isHidden = false },
+                          completion: nil)
+    }
+    
+    private func hideSuccessModalWithInterval() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self._successModalView.isHidden = true
+        }
+    }
+    
+    private func highlightButton(by sender: UIButton) {
         sender.isSelected = !_previewImageView.isHidden
         sender.setTitleColor(.cyan, for: .selected)
+    }
+    
+    private func showPreview() {
+        let preview = previews[0]
+        _previewImageView.isHidden = !_previewImageView.isHidden
         
         UIView.transition(with: _previewImageView,
                           duration: 0.2,
                           options: .transitionFlipFromBottom,
-                          animations: { self._previewImageView.image = UIImage(named: preview.imageName) },
+                          animations: { self._previewImageView.image = UIImage(named: preview._imageName) },
                           completion: nil)
-        
-        soundsManager.playSound(.preview)
+    }
+    
+    private func setupPresentor() {
+        presenter.setViewInputDelegate(delegate: self)
+        viewOutputDelegate = presenter
+        viewOutputDelegate?.getData()
     }
     
     private func changeWallImage() {
@@ -141,7 +153,7 @@ class EditorViewController: UIViewController {
     
     private func changeShelvesImage() {
         let shelf = shelves[_shelfIndex]
-        _shelvesImage = UIImage(named: shelf.imageName)
+        _shelvesImage = UIImage(named: shelf._imageName)
         
         UIView.transition(with: _shelvesImageView,
                           duration: 0.2,
@@ -151,14 +163,10 @@ class EditorViewController: UIViewController {
     }
     
     private func changeShelfIndex(by direction:  UISwipeGestureRecognizer.Direction) {
-        if direction == .left {
-            if _shelfIndex < shelves.count - 1 {
-                _shelfIndex += 1
-            }
-        } else if direction == .right {
-            if _shelfIndex > 0 {
-                _shelfIndex -= 1
-            }
+        if direction == .left && _shelfIndex < shelves.count - 1 {
+            _shelfIndex += 1
+        } else if direction == .right && _shelfIndex > 0 {
+            _shelfIndex -= 1
         }
     }
     
@@ -193,7 +201,6 @@ class EditorViewController: UIViewController {
     
     public func setInfoTutorialSignal(senderViewController: UIViewController) {
         guard senderViewController.classForCoder == InfoViewController.classForCoder() else { return }
-        
         _infoShowTutorialSignal = true
     }
     
@@ -204,11 +211,11 @@ class EditorViewController: UIViewController {
 
 // MARK: - EditorViewInputDelegate
 extension EditorViewController: EditorViewInputDelegate {
-    func setupShelves(with shelves: [Shelf]) {
+    internal func setupShelves(with shelves: [IScalable]) {
         self.shelves = shelves
     }
     
-    func setupPreviews(with previews: [Preview]) {
+    internal func setupPreviews(with previews: [IScalable]) {
         self.previews = previews
     }
 }

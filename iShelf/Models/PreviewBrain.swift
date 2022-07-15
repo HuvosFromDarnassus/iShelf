@@ -7,9 +7,7 @@
 
 import UIKit
 
-class PreviewBrain {
-    private let deviceManager = DeviceManager()
-    
+class PreviewBrain: ModelBrain {
     private let _previews: [Preview] = [
         Preview(imageName: "s0_preview", devices: DeviceManager.sizeClass.size0),
         Preview(imageName: "s1_preview", devices: DeviceManager.sizeClass.size1),
@@ -21,23 +19,8 @@ class PreviewBrain {
         Preview(imageName: "s7_preview", devices: DeviceManager.sizeClass.size7)
     ]
     
-    private var _previewsForDevice: [Preview] = []
-    
-    public init() {
-        sortPreviewsForDevice()
-    }
-    
-    public func getPreviews() -> [Preview] {
-        return _previewsForDevice
-    }
-    
-    private func sortPreviewsForDevice() {
-        for _preview in _previews {
-            for device in _preview.devices {
-                if device == deviceManager.type {
-                    _previewsForDevice.append(_preview)
-                }
-            }
-        }
+    public override init() {
+        super.init()
+        sortDataForDevice(using: _previews)
     }
 }

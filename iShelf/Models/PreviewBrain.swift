@@ -21,6 +21,6 @@ class PreviewBrain: ModelBrain {
     
     public override init() {
         super.init()
-        sortDataForDevice(using: _previews)
+        sortAssetsForDevice(using: _previews)
     }
 }

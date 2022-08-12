@@ -8,21 +8,18 @@
 class ModelBrain {
     internal let deviceManager = DeviceManager()
     
-    internal var dataForDevice: [IScalable] = []
+    internal var assetsForDevice: [IScalable] = []
     
-    internal func sortDataForDevice(using data: [IScalable]) {
-        for dataObject in data {
-            for device in dataObject._devices {
-                if device == deviceManager.type {
-                    dataForDevice.append(dataObject)
-                }
-            }
+    internal func sortAssetsForDevice(using assets: [IScalable]) {
+        assetsForDevice = assets.map {
+            $0._devices.filter { $0 == deviceManager.type }
+            return $0
         }
     }
 }
 
 extension ModelBrain: GetDataProtocol {
     internal func getData() -> [IScalable] {
-        return dataForDevice
+        return assetsForDevice
     }
 }

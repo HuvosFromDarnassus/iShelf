@@ -60,10 +60,10 @@ class ShelfBrain: ModelBrain {
     
     public override init() {
         super.init()
-        sortDataForDevice(using: _shelves)
+        sortAssetsForDevice(using: _shelves)
     }
     
     public func getShelvesCount() -> Int {
-        return dataForDevice.count
+        return assetsForDevice.count
     }
 }

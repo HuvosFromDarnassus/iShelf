@@ -8,8 +8,7 @@ A simple wallpaper editor application for iPhone. Create your own wallpapers wit
 
 ## 🎨 Demo
 
-![Demo GIF](demo/demo.gif)
-
+![Demo video](https://user-images.githubusercontent.com/58942445/179615241-f15b5744-1d46-4f77-8c32-426c6b737ffc.mp4)
 
 ## 📸 Screenshots
 
